@@ -59,6 +59,8 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 464, Short.MAX_VALUE)
         );
 
+        jMenuBar1.setBackground(new java.awt.Color(153, 153, 255));
+
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/Imagenes/clientes_1.png"))); // NOI18N
         jMenu1.setText("Clientes");
 
