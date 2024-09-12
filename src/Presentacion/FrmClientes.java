@@ -230,6 +230,16 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("DNI");
 
+        txtDniCliente.setForeground(new java.awt.Color(153, 153, 153));
+        txtDniCliente.setText("Escriba aquí...");
+        txtDniCliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDniClienteFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDniClienteFocusLost(evt);
+            }
+        });
         txtDniCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDniClienteKeyReleased(evt);
@@ -239,6 +249,16 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Nombre ");
 
+        txtNombreCliente.setForeground(new java.awt.Color(153, 153, 153));
+        txtNombreCliente.setText("Escriba aquí...");
+        txtNombreCliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNombreClienteFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNombreClienteFocusLost(evt);
+            }
+        });
         txtNombreCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtNombreClienteKeyReleased(evt);
@@ -248,6 +268,16 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Teléfono");
 
+        txtTelefonoCliente.setForeground(new java.awt.Color(153, 153, 153));
+        txtTelefonoCliente.setText("Escriba aquí...");
+        txtTelefonoCliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTelefonoClienteFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTelefonoClienteFocusLost(evt);
+            }
+        });
         txtTelefonoCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtTelefonoClienteKeyReleased(evt);
@@ -257,6 +287,16 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Dirección");
 
+        txtDireccionCliente.setForeground(new java.awt.Color(153, 153, 153));
+        txtDireccionCliente.setText("Escriba aquí...");
+        txtDireccionCliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDireccionClienteFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDireccionClienteFocusLost(evt);
+            }
+        });
         txtDireccionCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDireccionClienteKeyReleased(evt);
@@ -433,6 +473,62 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         validarDireccion();
     }//GEN-LAST:event_txtDireccionClienteKeyReleased
+
+    private void txtDniClienteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniClienteFocusGained
+        // TODO add your handling code here:
+        if (txtDniCliente.getText().equals("Escriba aquí...")) {
+                    txtDniCliente.setText("");
+                }
+    }//GEN-LAST:event_txtDniClienteFocusGained
+
+    private void txtDniClienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniClienteFocusLost
+        // TODO add your handling code here:
+        if (txtDniCliente.getText().isEmpty()) {
+                    txtDniCliente.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtDniClienteFocusLost
+
+    private void txtNombreClienteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreClienteFocusGained
+        // TODO add your handling code here:
+        if (txtNombreCliente.getText().equals("Escriba aquí...")) {
+                    txtNombreCliente.setText("");
+                }
+    }//GEN-LAST:event_txtNombreClienteFocusGained
+
+    private void txtNombreClienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreClienteFocusLost
+        // TODO add your handling code here:
+        if (txtNombreCliente.getText().isEmpty()) {
+                    txtNombreCliente.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtNombreClienteFocusLost
+
+    private void txtTelefonoClienteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoClienteFocusGained
+        // TODO add your handling code here:
+        if (txtTelefonoCliente.getText().equals("Escriba aquí...")) {
+                    txtTelefonoCliente.setText("");
+                }
+    }//GEN-LAST:event_txtTelefonoClienteFocusGained
+
+    private void txtTelefonoClienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoClienteFocusLost
+        // TODO add your handling code here:
+        if (txtTelefonoCliente.getText().isEmpty()) {
+                    txtTelefonoCliente.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtTelefonoClienteFocusLost
+
+    private void txtDireccionClienteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDireccionClienteFocusGained
+        // TODO add your handling code here:
+        if (txtDireccionCliente.getText().equals("Escriba aquí...")) {
+                    txtDireccionCliente.setText("");
+                }
+    }//GEN-LAST:event_txtDireccionClienteFocusGained
+
+    private void txtDireccionClienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDireccionClienteFocusLost
+        // TODO add your handling code here:
+        if (txtDireccionCliente.getText().isEmpty()) {
+                    txtDireccionCliente.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtDireccionClienteFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

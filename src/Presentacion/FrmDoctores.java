@@ -64,13 +64,13 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
     
     public void validarDireccion(){
         
-        if(txtPaciente4.getText().isEmpty()){
+        if(txtDoctor4.getText().isEmpty()){
             lblMensaje3.setText("Campo Obligatorio");    
         }else{
             lblMensaje3.setText("");
         }
         
-        if(txtPaciente4.getText().isEmpty()){
+        if(txtDoctor4.getText().isEmpty()){
             btnGuardar.setEnabled(false);
         }else{
             btnGuardar.setEnabled(true);
@@ -80,13 +80,13 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
     
     public void validarEdad(){
         
-        if(txtPaciente6.getText().isEmpty()){
+        if(txtDoctor6.getText().isEmpty()){
             lblMensaje4.setText("Campo Obligatorio");    
         }else{
             lblMensaje4.setText("");
         }
         
-        if(txtPaciente6.getText().isEmpty()){
+        if(txtDoctor6.getText().isEmpty()){
             btnGuardar.setEnabled(false);
         }else{
             btnGuardar.setEnabled(true);
@@ -105,7 +105,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtBuscar = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -124,9 +124,9 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
         txtDoctor1 = new javax.swing.JTextField();
         txtDoctor2 = new javax.swing.JTextField();
         txtDoctor3 = new javax.swing.JTextField();
-        txtPaciente4 = new javax.swing.JTextField();
+        txtDoctor4 = new javax.swing.JTextField();
         txtPaciente5 = new com.toedter.calendar.JDateChooser();
-        txtPaciente6 = new javax.swing.JTextField();
+        txtDoctor6 = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         lblMensaje = new javax.swing.JLabel();
@@ -149,8 +149,16 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Nombre del Doctor(a): ");
 
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("Buscar...");
+        txtBuscar.setForeground(new java.awt.Color(153, 153, 153));
+        txtBuscar.setText("Buscar...");
+        txtBuscar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtBuscarFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtBuscarFocusLost(evt);
+            }
+        });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/Imagenes/buscar.png"))); // NOI18N
         jButton1.setText("BUSCAR");
@@ -192,7 +200,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -215,7 +223,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                 .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -254,27 +262,67 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("Edad");
 
+        txtDoctor1.setForeground(new java.awt.Color(153, 153, 153));
+        txtDoctor1.setText("Escriba aquí...");
+        txtDoctor1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDoctor1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDoctor1FocusLost(evt);
+            }
+        });
         txtDoctor1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDoctor1KeyReleased(evt);
             }
         });
 
+        txtDoctor2.setForeground(new java.awt.Color(153, 153, 153));
+        txtDoctor2.setText("Escriba aquí...");
+        txtDoctor2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDoctor2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDoctor2FocusLost(evt);
+            }
+        });
         txtDoctor2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDoctor2KeyReleased(evt);
             }
         });
 
+        txtDoctor3.setForeground(new java.awt.Color(153, 153, 153));
+        txtDoctor3.setText("Escriba aquí...");
+        txtDoctor3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDoctor3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDoctor3FocusLost(evt);
+            }
+        });
         txtDoctor3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDoctor3KeyReleased(evt);
             }
         });
 
-        txtPaciente4.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtDoctor4.setForeground(new java.awt.Color(153, 153, 153));
+        txtDoctor4.setText("Escriba aquí...");
+        txtDoctor4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDoctor4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDoctor4FocusLost(evt);
+            }
+        });
+        txtDoctor4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtPaciente4KeyReleased(evt);
+                txtDoctor4KeyReleased(evt);
             }
         });
 
@@ -284,9 +332,19 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
             }
         });
 
-        txtPaciente6.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtDoctor6.setForeground(new java.awt.Color(153, 153, 153));
+        txtDoctor6.setText("Escriba aquí...");
+        txtDoctor6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDoctor6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDoctor6FocusLost(evt);
+            }
+        });
+        txtDoctor6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtPaciente6KeyReleased(evt);
+                txtDoctor6KeyReleased(evt);
             }
         });
 
@@ -360,7 +418,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(62, 62, 62)
-                                .addComponent(txtPaciente4))
+                                .addComponent(txtDoctor4))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -374,7 +432,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                                                 .addGap(0, 43, Short.MAX_VALUE))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(41, 41, 41)
-                                        .addComponent(txtPaciente6)))))))
+                                        .addComponent(txtDoctor6)))))))
                 .addGap(10, 10, 10))
         );
         jPanel1Layout.setVerticalGroup(
@@ -391,7 +449,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(txtDoctor1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtPaciente4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtDoctor4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(5, 5, 5)
@@ -413,7 +471,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                     .addComponent(txtDoctor3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPaciente6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDoctor6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMensaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -456,19 +514,103 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
         validarTelefono();
     }//GEN-LAST:event_txtDoctor3KeyReleased
 
-    private void txtPaciente4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente4KeyReleased
+    private void txtDoctor4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDoctor4KeyReleased
         // TODO add your handling code here:
         validarDireccion();
-    }//GEN-LAST:event_txtPaciente4KeyReleased
+    }//GEN-LAST:event_txtDoctor4KeyReleased
 
     private void txtPaciente5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente5KeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPaciente5KeyReleased
 
-    private void txtPaciente6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente6KeyReleased
+    private void txtDoctor6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDoctor6KeyReleased
         // TODO add your handling code here:
         validarEdad();
-    }//GEN-LAST:event_txtPaciente6KeyReleased
+    }//GEN-LAST:event_txtDoctor6KeyReleased
+
+    private void txtDoctor1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDoctor1FocusGained
+        // TODO add your handling code here:
+        if(txtDoctor1.getText().equals("Escriba aquí...")){
+            txtDoctor1.setText("");
+        }
+    }//GEN-LAST:event_txtDoctor1FocusGained
+
+    private void txtDoctor1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDoctor1FocusLost
+        // TODO add your handling code here:
+        if(txtDoctor1.getText().isEmpty()){
+            txtDoctor1.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtDoctor1FocusLost
+
+    private void txtDoctor2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDoctor2FocusGained
+        // TODO add your handling code here:
+        if(txtDoctor2.getText().equals("Escriba aquí...")){
+            txtDoctor2.setText("");
+        }
+    }//GEN-LAST:event_txtDoctor2FocusGained
+
+    private void txtDoctor2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDoctor2FocusLost
+        // TODO add your handling code here:
+        if(txtDoctor2.getText().isEmpty()){
+            txtDoctor2.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtDoctor2FocusLost
+
+    private void txtDoctor3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDoctor3FocusGained
+        // TODO add your handling code here:
+        if(txtDoctor3.getText().equals("Escriba aquí...")){
+            txtDoctor3.setText("");
+        }
+    }//GEN-LAST:event_txtDoctor3FocusGained
+
+    private void txtDoctor3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDoctor3FocusLost
+        // TODO add your handling code here:
+        if(txtDoctor3.getText().isEmpty()){
+            txtDoctor3.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtDoctor3FocusLost
+
+    private void txtDoctor4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDoctor4FocusGained
+        // TODO add your handling code here:
+        if(txtDoctor4.getText().equals("Escriba aquí...")){
+            txtDoctor4.setText("");
+        }
+    }//GEN-LAST:event_txtDoctor4FocusGained
+
+    private void txtDoctor4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDoctor4FocusLost
+        // TODO add your handling code here:
+        if(txtDoctor4.getText().isEmpty()){
+            txtDoctor4.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtDoctor4FocusLost
+
+    private void txtDoctor6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDoctor6FocusGained
+        // TODO add your handling code here:
+        if(txtDoctor6.getText().equals("Escriba aquí...")){
+            txtDoctor6.setText("");
+        }
+    }//GEN-LAST:event_txtDoctor6FocusGained
+
+    private void txtDoctor6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDoctor6FocusLost
+        // TODO add your handling code here:
+        if(txtDoctor6.getText().isEmpty()){
+            txtDoctor6.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtDoctor6FocusLost
+
+    private void txtBuscarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarFocusGained
+        // TODO add your handling code here:
+        if(txtBuscar.getText().equals("Buscar...")){
+            txtBuscar.setText("");
+        }
+    }//GEN-LAST:event_txtBuscarFocusGained
+
+    private void txtBuscarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarFocusLost
+        // TODO add your handling code here:
+        if(txtBuscar.getText().isEmpty()){
+            txtBuscar.setText("Buscar...");
+        }
+    }//GEN-LAST:event_txtBuscarFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -492,17 +634,17 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblMensaje;
     private javax.swing.JLabel lblMensaje1;
     private javax.swing.JLabel lblMensaje2;
     private javax.swing.JLabel lblMensaje3;
     private javax.swing.JLabel lblMensaje4;
+    private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtDoctor1;
     private javax.swing.JTextField txtDoctor2;
     private javax.swing.JTextField txtDoctor3;
-    private javax.swing.JTextField txtPaciente4;
+    private javax.swing.JTextField txtDoctor4;
+    private javax.swing.JTextField txtDoctor6;
     private com.toedter.calendar.JDateChooser txtPaciente5;
-    private javax.swing.JTextField txtPaciente6;
     // End of variables declaration//GEN-END:variables
 }

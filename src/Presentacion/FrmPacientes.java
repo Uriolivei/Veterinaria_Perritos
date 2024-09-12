@@ -276,30 +276,80 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("Raza");
 
+        txtPaciente1.setForeground(new java.awt.Color(153, 153, 153));
+        txtPaciente1.setText("Escriba aquí...");
+        txtPaciente1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPaciente1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPaciente1FocusLost(evt);
+            }
+        });
         txtPaciente1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPaciente1KeyReleased(evt);
             }
         });
 
+        txtPaciente2.setForeground(new java.awt.Color(153, 153, 153));
+        txtPaciente2.setText("Escriba aquí...");
+        txtPaciente2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPaciente2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPaciente2FocusLost(evt);
+            }
+        });
         txtPaciente2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPaciente2KeyReleased(evt);
             }
         });
 
+        txtPaciente4.setForeground(new java.awt.Color(153, 153, 153));
+        txtPaciente4.setText("Escriba aquí...");
+        txtPaciente4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPaciente4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPaciente4FocusLost(evt);
+            }
+        });
         txtPaciente4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPaciente4KeyReleased(evt);
             }
         });
 
+        txtPaciente5.setForeground(new java.awt.Color(153, 153, 153));
+        txtPaciente5.setText("Escriba aquí...");
+        txtPaciente5.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPaciente5FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPaciente5FocusLost(evt);
+            }
+        });
         txtPaciente5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPaciente5KeyReleased(evt);
             }
         });
 
+        txtPaciente3.setForeground(new java.awt.Color(153, 153, 153));
+        txtPaciente3.setText("Escriba aquí...");
+        txtPaciente3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPaciente3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPaciente3FocusLost(evt);
+            }
+        });
         txtPaciente3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPaciente3KeyReleased(evt);
@@ -309,6 +359,16 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("Peso");
 
+        txtPaciente6.setForeground(new java.awt.Color(153, 153, 153));
+        txtPaciente6.setText("Escriba aquí...");
+        txtPaciente6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPaciente6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPaciente6FocusLost(evt);
+            }
+        });
         txtPaciente6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPaciente6KeyReleased(evt);
@@ -505,6 +565,90 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                     txtBuscar.setText("Buscar...");
         }
     }//GEN-LAST:event_txtBuscarFocusLost
+
+    private void txtPaciente1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente1FocusGained
+        // TODO add your handling code here:
+        if(txtPaciente1.getText().equals("Escriba aquí...")){
+            txtPaciente1.setText("");
+        }
+    }//GEN-LAST:event_txtPaciente1FocusGained
+
+    private void txtPaciente1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente1FocusLost
+        // TODO add your handling code here:
+        if(txtPaciente1.getText().isEmpty()){
+            txtPaciente1.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtPaciente1FocusLost
+
+    private void txtPaciente2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente2FocusGained
+        // TODO add your handling code here:
+        if(txtPaciente2.getText().equals("Escriba aquí...")){
+            txtPaciente2.setText("");
+        }
+    }//GEN-LAST:event_txtPaciente2FocusGained
+
+    private void txtPaciente2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente2FocusLost
+        // TODO add your handling code here:
+        if(txtPaciente2.getText().isEmpty()){
+            txtPaciente2.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtPaciente2FocusLost
+
+    private void txtPaciente3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente3FocusGained
+        // TODO add your handling code here:
+        if(txtPaciente3.getText().equals("Escriba aquí...")){
+            txtPaciente3.setText("");
+        }
+    }//GEN-LAST:event_txtPaciente3FocusGained
+
+    private void txtPaciente3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente3FocusLost
+        // TODO add your handling code here:
+        if(txtPaciente3.getText().isEmpty()){
+            txtPaciente3.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtPaciente3FocusLost
+
+    private void txtPaciente4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente4FocusGained
+        // TODO add your handling code here:
+        if(txtPaciente4.getText().equals("Escriba aquí...")){
+            txtPaciente4.setText("");
+        }
+    }//GEN-LAST:event_txtPaciente4FocusGained
+
+    private void txtPaciente4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente4FocusLost
+        // TODO add your handling code here:
+        if(txtPaciente4.getText().isEmpty()){
+            txtPaciente4.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtPaciente4FocusLost
+
+    private void txtPaciente5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente5FocusGained
+        // TODO add your handling code here:
+        if(txtPaciente5.getText().equals("Escriba aquí...")){
+            txtPaciente5.setText("");
+        }
+    }//GEN-LAST:event_txtPaciente5FocusGained
+
+    private void txtPaciente5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente5FocusLost
+        // TODO add your handling code here:
+        if(txtPaciente5.getText().isEmpty()){
+            txtPaciente5.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtPaciente5FocusLost
+
+    private void txtPaciente6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente6FocusGained
+        // TODO add your handling code here:
+        if(txtPaciente6.getText().equals("Escriba aquí...")){
+            txtPaciente6.setText("");
+        }
+    }//GEN-LAST:event_txtPaciente6FocusGained
+
+    private void txtPaciente6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente6FocusLost
+        // TODO add your handling code here:
+        if(txtPaciente6.getText().isEmpty()){
+            txtPaciente6.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtPaciente6FocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
