@@ -16,6 +16,97 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     public FrmPacientes() {
         initComponents();
     }
+    
+    public void validarDNI(){
+        
+        if(txtPaciente1.getText().isEmpty()){
+            lblSolu.setText("Campo Obligatorio");    
+        }else{
+            lblSolu.setText("");
+        }
+        
+        if(txtPaciente1.getText().isEmpty()){
+            btnGuardar.setEnabled(false);
+        }else{
+            btnGuardar.setEnabled(true);
+        }               
+    }
+    
+    public void validarPaciente(){
+        
+        if(txtPaciente2.getText().isEmpty()){
+            lblSolu1.setText("Campo Obligatorio");    
+        }else{
+            lblSolu1.setText("");
+        }
+        
+        if(txtPaciente2.getText().isEmpty()){
+            btnGuardar.setEnabled(false);
+        }else{
+            btnGuardar.setEnabled(true);
+        }               
+    }
+    
+    public void validarRaza(){
+        
+        if(txtPaciente3.getText().isEmpty()){
+            lblSolu2.setText("Campo Obligatorio");    
+        }else{
+            lblSolu2.setText("");
+        }
+        
+        if(txtPaciente3.getText().isEmpty()){
+            btnGuardar.setEnabled(false);
+        }else{
+            btnGuardar.setEnabled(true);
+        }               
+    }
+    
+    public void validarEdad(){
+        
+        if(txtPaciente4.getText().isEmpty()){
+            lblSolu3.setText("Campo Obligatorio");    
+        }else{
+            lblSolu3.setText("");
+        }
+        
+        if(txtPaciente4.getText().isEmpty()){
+            btnGuardar.setEnabled(false);
+        }else{
+            btnGuardar.setEnabled(true);
+        }               
+    }
+    
+    
+    public void validarColor(){
+        
+        if(txtPaciente5.getText().isEmpty()){
+            lblSolu4.setText("Campo Obligatorio");    
+        }else{
+            lblSolu4.setText("");
+        }
+        
+        if(txtPaciente5.getText().isEmpty()){
+            btnGuardar.setEnabled(false);
+        }else{
+            btnGuardar.setEnabled(true);
+        }               
+    }
+    
+    public void validarPeso(){
+        
+        if(txtPaciente6.getText().isEmpty()){
+            lblSolu4.setText("Campo Obligatorio");    
+        }else{
+            lblSolu4.setText("");
+        }
+        
+        if(txtPaciente6.getText().isEmpty()){
+            btnGuardar.setEnabled(false);
+        }else{
+            btnGuardar.setEnabled(true);
+        }               
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,15 +135,21 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txtPaciente1 = new javax.swing.JTextField();
+        txtPaciente2 = new javax.swing.JTextField();
+        txtPaciente4 = new javax.swing.JTextField();
+        txtPaciente5 = new javax.swing.JTextField();
+        txtPaciente3 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        txtPaciente6 = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        lblSolu = new javax.swing.JLabel();
+        lblSolu1 = new javax.swing.JLabel();
+        lblSolu2 = new javax.swing.JLabel();
+        lblSolu3 = new javax.swing.JLabel();
+        lblSolu4 = new javax.swing.JLabel();
+        lblSolu5 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -160,13 +257,72 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
 
         jLabel7.setText("Raza");
 
+        txtPaciente1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPaciente1KeyReleased(evt);
+            }
+        });
+
+        txtPaciente2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPaciente2KeyReleased(evt);
+            }
+        });
+
+        txtPaciente4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPaciente4KeyReleased(evt);
+            }
+        });
+
+        txtPaciente5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPaciente5KeyReleased(evt);
+            }
+        });
+
+        txtPaciente3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPaciente3KeyReleased(evt);
+            }
+        });
+
         jLabel8.setText("Peso");
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/Imagenes/guardar.png"))); // NOI18N
-        jButton6.setText("GUARDAR");
+        txtPaciente6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPaciente6KeyReleased(evt);
+            }
+        });
+
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/Imagenes/guardar.png"))); // NOI18N
+        btnGuardar.setText("GUARDAR");
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/Imagenes/cancelar.png"))); // NOI18N
         jButton7.setText("CANCELAR");
+
+        lblSolu.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        lblSolu.setForeground(new java.awt.Color(255, 0, 0));
+        lblSolu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblSolu1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        lblSolu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblSolu2.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        lblSolu2.setForeground(new java.awt.Color(255, 0, 0));
+        lblSolu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblSolu3.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        lblSolu3.setForeground(new java.awt.Color(255, 0, 0));
+        lblSolu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblSolu4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        lblSolu4.setForeground(new java.awt.Color(255, 0, 0));
+        lblSolu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblSolu5.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        lblSolu5.setForeground(new java.awt.Color(255, 0, 0));
+        lblSolu5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -179,39 +335,46 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(78, 78, 78)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(lblSolu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtPaciente1, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblSolu2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtPaciente3)
+                                    .addComponent(lblSolu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtPaciente2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(73, 73, 73)
+                                        .addGap(51, 51, 51)
                                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(9, 9, 9))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(78, 78, 78)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtPaciente6)
+                            .addComponent(lblSolu4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblSolu5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPaciente4, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblSolu3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPaciente5)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
+                        .addGap(146, 146, 146)
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,26 +382,40 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                    .addComponent(txtPaciente4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSolu, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(lblSolu3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPaciente2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                    .addComponent(txtPaciente5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSolu1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSolu4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35))
+                    .addComponent(txtPaciente3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPaciente6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblSolu2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblSolu5, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(209, 209, 209))
         );
 
         jTabbedPane1.addTab("Registro de Pacientes", jPanel2);
@@ -260,14 +437,44 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtPaciente1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente1KeyReleased
+        // TODO add your handling code here:
+        validarDNI();
+    }//GEN-LAST:event_txtPaciente1KeyReleased
+
+    private void txtPaciente2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente2KeyReleased
+        // TODO add your handling code here:
+        validarPaciente();
+    }//GEN-LAST:event_txtPaciente2KeyReleased
+
+    private void txtPaciente3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente3KeyReleased
+        // TODO add your handling code here:
+        validarRaza();
+    }//GEN-LAST:event_txtPaciente3KeyReleased
+
+    private void txtPaciente4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente4KeyReleased
+        // TODO add your handling code here:
+        validarEdad();
+    }//GEN-LAST:event_txtPaciente4KeyReleased
+
+    private void txtPaciente5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente5KeyReleased
+        // TODO add your handling code here:
+        validarColor();
+    }//GEN-LAST:event_txtPaciente5KeyReleased
+
+    private void txtPaciente6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente6KeyReleased
+        // TODO add your handling code here:
+        validarPeso();
+    }//GEN-LAST:event_txtPaciente6KeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -283,11 +490,17 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel lblSolu;
+    private javax.swing.JLabel lblSolu1;
+    private javax.swing.JLabel lblSolu2;
+    private javax.swing.JLabel lblSolu3;
+    private javax.swing.JLabel lblSolu4;
+    private javax.swing.JLabel lblSolu5;
+    private javax.swing.JTextField txtPaciente1;
+    private javax.swing.JTextField txtPaciente2;
+    private javax.swing.JTextField txtPaciente3;
+    private javax.swing.JTextField txtPaciente4;
+    private javax.swing.JTextField txtPaciente5;
+    private javax.swing.JTextField txtPaciente6;
     // End of variables declaration//GEN-END:variables
 }
