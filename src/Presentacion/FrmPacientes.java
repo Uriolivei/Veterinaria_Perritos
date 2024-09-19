@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
+
 package Presentacion;
 
 /**
@@ -19,13 +16,13 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     
     public void validarDNI(){
         
-        if(txtPaciente1.getText().isEmpty()){
+        if(txtNombreMascota.getText().isEmpty()){
             lblSolu.setText("Campo Obligatorio");    
         }else{
             lblSolu.setText("");
         }
         
-        if(txtPaciente1.getText().isEmpty()){
+        if(txtNombreMascota.getText().isEmpty()){
             btnGuardar.setEnabled(false);
         }else{
             btnGuardar.setEnabled(true);
@@ -34,13 +31,13 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     
     public void validarPaciente(){
         
-        if(txtPaciente2.getText().isEmpty()){
+        if(txtRazaMascota.getText().isEmpty()){
             lblSolu1.setText("Campo Obligatorio");    
         }else{
             lblSolu1.setText("");
         }
         
-        if(txtPaciente2.getText().isEmpty()){
+        if(txtRazaMascota.getText().isEmpty()){
             btnGuardar.setEnabled(false);
         }else{
             btnGuardar.setEnabled(true);
@@ -49,13 +46,13 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     
     public void validarRaza(){
         
-        if(txtPaciente3.getText().isEmpty()){
+        if(txtColorMascota.getText().isEmpty()){
             lblSolu2.setText("Campo Obligatorio");    
         }else{
             lblSolu2.setText("");
         }
         
-        if(txtPaciente3.getText().isEmpty()){
+        if(txtColorMascota.getText().isEmpty()){
             btnGuardar.setEnabled(false);
         }else{
             btnGuardar.setEnabled(true);
@@ -64,13 +61,13 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     
     public void validarEdad(){
         
-        if(txtPaciente4.getText().isEmpty()){
+        if(txtPesoMascota.getText().isEmpty()){
             lblSolu3.setText("Campo Obligatorio");    
         }else{
             lblSolu3.setText("");
         }
         
-        if(txtPaciente4.getText().isEmpty()){
+        if(txtPesoMascota.getText().isEmpty()){
             btnGuardar.setEnabled(false);
         }else{
             btnGuardar.setEnabled(true);
@@ -80,33 +77,19 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     
     public void validarColor(){
         
-        if(txtPaciente5.getText().isEmpty()){
+        if(txtEdadMascota.getText().isEmpty()){
             lblSolu4.setText("Campo Obligatorio");    
         }else{
             lblSolu4.setText("");
         }
         
-        if(txtPaciente5.getText().isEmpty()){
+        if(txtEdadMascota.getText().isEmpty()){
             btnGuardar.setEnabled(false);
         }else{
             btnGuardar.setEnabled(true);
         }               
     }
     
-    public void validarPeso(){
-        
-        if(txtPaciente6.getText().isEmpty()){
-            lblSolu5.setText("Campo Obligatorio");    
-        }else{
-            lblSolu5.setText("");
-        }
-        
-        if(txtPaciente6.getText().isEmpty()){
-            btnGuardar.setEnabled(false);
-        }else{
-            btnGuardar.setEnabled(true);
-        }               
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -135,13 +118,12 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtPaciente1 = new javax.swing.JTextField();
-        txtPaciente2 = new javax.swing.JTextField();
-        txtPaciente4 = new javax.swing.JTextField();
-        txtPaciente5 = new javax.swing.JTextField();
-        txtPaciente3 = new javax.swing.JTextField();
+        txtNombreMascota = new javax.swing.JTextField();
+        txtRazaMascota = new javax.swing.JTextField();
+        txtPesoMascota = new javax.swing.JTextField();
+        txtEdadMascota = new javax.swing.JTextField();
+        txtColorMascota = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtPaciente6 = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         lblSolu = new javax.swing.JLabel();
@@ -150,6 +132,7 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         lblSolu3 = new javax.swing.JLabel();
         lblSolu4 = new javax.swing.JLabel();
         lblSolu5 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setClosable(true);
@@ -227,12 +210,11 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                             .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(21, Short.MAX_VALUE))
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39))))
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +226,7 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -252,9 +234,9 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Listado de Pacientes", jPanel1);
@@ -262,118 +244,102 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("DNI");
+        jLabel2.setText("Nombre");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Paciente");
+        jLabel4.setText("Raza");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setText("Edad");
+        jLabel5.setText("Peso");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Color");
+        jLabel6.setText("Edad");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Raza");
+        jLabel7.setText("Color");
 
-        txtPaciente1.setForeground(new java.awt.Color(153, 153, 153));
-        txtPaciente1.setText("Escriba aquí...");
-        txtPaciente1.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtNombreMascota.setForeground(new java.awt.Color(153, 153, 153));
+        txtNombreMascota.setText("Escriba aquí...");
+        txtNombreMascota.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtPaciente1FocusGained(evt);
+                txtNombreMascotaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtPaciente1FocusLost(evt);
+                txtNombreMascotaFocusLost(evt);
             }
         });
-        txtPaciente1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtNombreMascota.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtPaciente1KeyReleased(evt);
-            }
-        });
-
-        txtPaciente2.setForeground(new java.awt.Color(153, 153, 153));
-        txtPaciente2.setText("Escriba aquí...");
-        txtPaciente2.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtPaciente2FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtPaciente2FocusLost(evt);
-            }
-        });
-        txtPaciente2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtPaciente2KeyReleased(evt);
+                txtNombreMascotaKeyReleased(evt);
             }
         });
 
-        txtPaciente4.setForeground(new java.awt.Color(153, 153, 153));
-        txtPaciente4.setText("Escriba aquí...");
-        txtPaciente4.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtRazaMascota.setForeground(new java.awt.Color(153, 153, 153));
+        txtRazaMascota.setText("Escriba aquí...");
+        txtRazaMascota.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtPaciente4FocusGained(evt);
+                txtRazaMascotaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtPaciente4FocusLost(evt);
+                txtRazaMascotaFocusLost(evt);
             }
         });
-        txtPaciente4.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtRazaMascota.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtPaciente4KeyReleased(evt);
+                txtRazaMascotaKeyReleased(evt);
             }
         });
 
-        txtPaciente5.setForeground(new java.awt.Color(153, 153, 153));
-        txtPaciente5.setText("Escriba aquí...");
-        txtPaciente5.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtPesoMascota.setForeground(new java.awt.Color(153, 153, 153));
+        txtPesoMascota.setText("Escriba aquí...");
+        txtPesoMascota.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtPaciente5FocusGained(evt);
+                txtPesoMascotaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtPaciente5FocusLost(evt);
+                txtPesoMascotaFocusLost(evt);
             }
         });
-        txtPaciente5.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtPesoMascota.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtPaciente5KeyReleased(evt);
+                txtPesoMascotaKeyReleased(evt);
             }
         });
 
-        txtPaciente3.setForeground(new java.awt.Color(153, 153, 153));
-        txtPaciente3.setText("Escriba aquí...");
-        txtPaciente3.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtEdadMascota.setForeground(new java.awt.Color(153, 153, 153));
+        txtEdadMascota.setText("Escriba aquí...");
+        txtEdadMascota.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtPaciente3FocusGained(evt);
+                txtEdadMascotaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtPaciente3FocusLost(evt);
+                txtEdadMascotaFocusLost(evt);
             }
         });
-        txtPaciente3.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtEdadMascota.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtPaciente3KeyReleased(evt);
+                txtEdadMascotaKeyReleased(evt);
+            }
+        });
+
+        txtColorMascota.setForeground(new java.awt.Color(153, 153, 153));
+        txtColorMascota.setText("Escriba aquí...");
+        txtColorMascota.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtColorMascotaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtColorMascotaFocusLost(evt);
+            }
+        });
+        txtColorMascota.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtColorMascotaKeyReleased(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Peso");
-
-        txtPaciente6.setForeground(new java.awt.Color(153, 153, 153));
-        txtPaciente6.setText("Escriba aquí...");
-        txtPaciente6.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtPaciente6FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtPaciente6FocusLost(evt);
-            }
-        });
-        txtPaciente6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtPaciente6KeyReleased(evt);
-            }
-        });
+        jLabel8.setText("Nacimiento");
 
         btnGuardar.setBackground(new java.awt.Color(255, 204, 204));
         btnGuardar.setFont(new java.awt.Font("Algerian", 0, 12)); // NOI18N
@@ -417,17 +383,7 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(78, 78, 78)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(lblSolu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtPaciente1, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -435,25 +391,28 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lblSolu2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtPaciente3)
+                                    .addComponent(txtColorMascota)
                                     .addComponent(lblSolu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtPaciente2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtRazaMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(78, 78, 78)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(51, 51, 51)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(9, 9, 9))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(lblSolu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtNombreMascota, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))))
+                        .addGap(51, 51, 51)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPaciente6, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSolu4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSolu5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtPaciente4, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPesoMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblSolu3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtPaciente5)))
+                            .addComponent(txtEdadMascota)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(146, 146, 146)
                         .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -468,9 +427,9 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPaciente4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPesoMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSolu, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -479,20 +438,23 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                         .addComponent(lblSolu3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPaciente2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRazaMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPaciente5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEdadMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSolu1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSolu4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPaciente3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPaciente6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtColorMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                        .addGap(11, 11, 11)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblSolu2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -522,35 +484,30 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtPaciente1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente1KeyReleased
+    private void txtNombreMascotaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreMascotaKeyReleased
         // TODO add your handling code here:
         validarDNI();
-    }//GEN-LAST:event_txtPaciente1KeyReleased
+    }//GEN-LAST:event_txtNombreMascotaKeyReleased
 
-    private void txtPaciente2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente2KeyReleased
+    private void txtRazaMascotaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRazaMascotaKeyReleased
         // TODO add your handling code here:
         validarPaciente();
-    }//GEN-LAST:event_txtPaciente2KeyReleased
+    }//GEN-LAST:event_txtRazaMascotaKeyReleased
 
-    private void txtPaciente3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente3KeyReleased
+    private void txtColorMascotaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColorMascotaKeyReleased
         // TODO add your handling code here:
         validarRaza();
-    }//GEN-LAST:event_txtPaciente3KeyReleased
+    }//GEN-LAST:event_txtColorMascotaKeyReleased
 
-    private void txtPaciente4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente4KeyReleased
+    private void txtPesoMascotaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesoMascotaKeyReleased
         // TODO add your handling code here:
         validarEdad();
-    }//GEN-LAST:event_txtPaciente4KeyReleased
+    }//GEN-LAST:event_txtPesoMascotaKeyReleased
 
-    private void txtPaciente5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente5KeyReleased
+    private void txtEdadMascotaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEdadMascotaKeyReleased
         // TODO add your handling code here:
         validarColor();
-    }//GEN-LAST:event_txtPaciente5KeyReleased
-
-    private void txtPaciente6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaciente6KeyReleased
-        // TODO add your handling code here:
-        validarPeso();
-    }//GEN-LAST:event_txtPaciente6KeyReleased
+    }//GEN-LAST:event_txtEdadMascotaKeyReleased
 
     private void txtBuscarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarFocusGained
         // TODO add your handling code here:
@@ -566,89 +523,75 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_txtBuscarFocusLost
 
-    private void txtPaciente1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente1FocusGained
+    private void txtNombreMascotaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreMascotaFocusGained
         // TODO add your handling code here:
-        if(txtPaciente1.getText().equals("Escriba aquí...")){
-            txtPaciente1.setText("");
+        if(txtNombreMascota.getText().equals("Escriba aquí...")){
+            txtNombreMascota.setText("");
         }
-    }//GEN-LAST:event_txtPaciente1FocusGained
+    }//GEN-LAST:event_txtNombreMascotaFocusGained
 
-    private void txtPaciente1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente1FocusLost
+    private void txtNombreMascotaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreMascotaFocusLost
         // TODO add your handling code here:
-        if(txtPaciente1.getText().isEmpty()){
-            txtPaciente1.setText("Escriba aquí...");
+        if(txtNombreMascota.getText().isEmpty()){
+            txtNombreMascota.setText("Escriba aquí...");
         }
-    }//GEN-LAST:event_txtPaciente1FocusLost
+    }//GEN-LAST:event_txtNombreMascotaFocusLost
 
-    private void txtPaciente2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente2FocusGained
+    private void txtRazaMascotaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRazaMascotaFocusGained
         // TODO add your handling code here:
-        if(txtPaciente2.getText().equals("Escriba aquí...")){
-            txtPaciente2.setText("");
+        if(txtRazaMascota.getText().equals("Escriba aquí...")){
+            txtRazaMascota.setText("");
         }
-    }//GEN-LAST:event_txtPaciente2FocusGained
+    }//GEN-LAST:event_txtRazaMascotaFocusGained
 
-    private void txtPaciente2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente2FocusLost
+    private void txtRazaMascotaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRazaMascotaFocusLost
         // TODO add your handling code here:
-        if(txtPaciente2.getText().isEmpty()){
-            txtPaciente2.setText("Escriba aquí...");
+        if(txtRazaMascota.getText().isEmpty()){
+            txtRazaMascota.setText("Escriba aquí...");
         }
-    }//GEN-LAST:event_txtPaciente2FocusLost
+    }//GEN-LAST:event_txtRazaMascotaFocusLost
 
-    private void txtPaciente3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente3FocusGained
+    private void txtColorMascotaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtColorMascotaFocusGained
         // TODO add your handling code here:
-        if(txtPaciente3.getText().equals("Escriba aquí...")){
-            txtPaciente3.setText("");
+        if(txtColorMascota.getText().equals("Escriba aquí...")){
+            txtColorMascota.setText("");
         }
-    }//GEN-LAST:event_txtPaciente3FocusGained
+    }//GEN-LAST:event_txtColorMascotaFocusGained
 
-    private void txtPaciente3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente3FocusLost
+    private void txtColorMascotaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtColorMascotaFocusLost
         // TODO add your handling code here:
-        if(txtPaciente3.getText().isEmpty()){
-            txtPaciente3.setText("Escriba aquí...");
+        if(txtColorMascota.getText().isEmpty()){
+            txtColorMascota.setText("Escriba aquí...");
         }
-    }//GEN-LAST:event_txtPaciente3FocusLost
+    }//GEN-LAST:event_txtColorMascotaFocusLost
 
-    private void txtPaciente4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente4FocusGained
+    private void txtPesoMascotaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPesoMascotaFocusGained
         // TODO add your handling code here:
-        if(txtPaciente4.getText().equals("Escriba aquí...")){
-            txtPaciente4.setText("");
+        if(txtPesoMascota.getText().equals("Escriba aquí...")){
+            txtPesoMascota.setText("");
         }
-    }//GEN-LAST:event_txtPaciente4FocusGained
+    }//GEN-LAST:event_txtPesoMascotaFocusGained
 
-    private void txtPaciente4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente4FocusLost
+    private void txtPesoMascotaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPesoMascotaFocusLost
         // TODO add your handling code here:
-        if(txtPaciente4.getText().isEmpty()){
-            txtPaciente4.setText("Escriba aquí...");
+        if(txtPesoMascota.getText().isEmpty()){
+            txtPesoMascota.setText("Escriba aquí...");
         }
-    }//GEN-LAST:event_txtPaciente4FocusLost
+    }//GEN-LAST:event_txtPesoMascotaFocusLost
 
-    private void txtPaciente5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente5FocusGained
+    private void txtEdadMascotaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEdadMascotaFocusGained
         // TODO add your handling code here:
-        if(txtPaciente5.getText().equals("Escriba aquí...")){
-            txtPaciente5.setText("");
+        if(txtEdadMascota.getText().equals("Escriba aquí...")){
+            txtEdadMascota.setText("");
         }
-    }//GEN-LAST:event_txtPaciente5FocusGained
+    }//GEN-LAST:event_txtEdadMascotaFocusGained
 
-    private void txtPaciente5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente5FocusLost
+    private void txtEdadMascotaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEdadMascotaFocusLost
         // TODO add your handling code here:
-        if(txtPaciente5.getText().isEmpty()){
-            txtPaciente5.setText("Escriba aquí...");
+        if(txtEdadMascota.getText().isEmpty()){
+            txtEdadMascota.setText("Escriba aquí...");
         }
-    }//GEN-LAST:event_txtPaciente5FocusLost
-
-    private void txtPaciente6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente6FocusGained
-        // TODO add your handling code here:
-        if(txtPaciente6.getText().equals("Escriba aquí...")){
-            txtPaciente6.setText("");
-        }
-    }//GEN-LAST:event_txtPaciente6FocusGained
-
-    private void txtPaciente6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPaciente6FocusLost
-        // TODO add your handling code here:
-        if(txtPaciente6.getText().isEmpty()){
-            txtPaciente6.setText("Escriba aquí...");
-        }
-    }//GEN-LAST:event_txtPaciente6FocusLost
+    }//GEN-LAST:event_txtEdadMascotaFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -659,6 +602,7 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -679,11 +623,10 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblSolu4;
     private javax.swing.JLabel lblSolu5;
     private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextField txtPaciente1;
-    private javax.swing.JTextField txtPaciente2;
-    private javax.swing.JTextField txtPaciente3;
-    private javax.swing.JTextField txtPaciente4;
-    private javax.swing.JTextField txtPaciente5;
-    private javax.swing.JTextField txtPaciente6;
+    private javax.swing.JTextField txtColorMascota;
+    private javax.swing.JTextField txtEdadMascota;
+    private javax.swing.JTextField txtNombreMascota;
+    private javax.swing.JTextField txtPesoMascota;
+    private javax.swing.JTextField txtRazaMascota;
     // End of variables declaration//GEN-END:variables
 }
