@@ -45,22 +45,84 @@ public class ClienteDAO implements ClienteInterface<Clientes>{
 
     @Override
     public boolean insertar(Clientes obj) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        resp=false;
+           try {
+            ps=CON.Conectar().prepareStatement("INSERT INTO clientes(nombre_cliente,DNI,telefono,edad,condicion) VALUES(?,?,?,?,0)");
+            ps.setString(1, obj.getNombre_cliente());
+            ps.setString(2, obj.getDNI());
+            ps.setString(3, obj.getTelefono());
+            ps.setInt(4, obj.getEdad());
+            if(ps.executeUpdate()>0){
+                resp=true;
+            }
+            ps.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, " Error al registrar categoria " + e.getMessage());
+        }finally{
+               ps=null;
+               CON.Desconectar();
+           }
+           return resp;
     }
 
     @Override
     public boolean actualizar(Clientes obj) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        resp=false;
+        try {
+           ps=CON.Conectar().prepareStatement("UPDATE categorias SET nombre=?, descripcion=? WHERE idcategoria=?");
+           ps.setString(1, obj.getNombre_cliente());
+           ps.setString(2, obj.getDNI());
+           ps.setString(3, obj.getTelefono());
+           ps.setInt(4, obj.getEdad());
+           if(ps.executeUpdate()>0){
+               resp = true;
+           }
+           ps.close();
+        } catch (SQLException yeji) {
+            JOptionPane.showMessageDialog(null, "No se puede actualizar los datos" + yeji.getMessage());
+        }finally{
+            ps=null;
+            CON.Desconectar();
+        }
+        return resp;
     }
 
     @Override
     public boolean desactivar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        resp = false;
+        try {
+            ps=CON.Conectar().prepareStatement("UPDATE clientes SET condicion=0 WHERE idcliente=?");
+            ps.setInt(1, id);
+            if(ps.executeUpdate()>0){
+                resp=true;
+            }
+            ps.close();
+        } catch (SQLException yeji) {
+            JOptionPane.showMessageDialog(null, "No se pudo desactivar cliente" + yeji.getMessage());
+        }finally{
+            ps=null;
+            CON.Desconectar();
+        }
+        return resp;
     }
 
     @Override
     public boolean activar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        resp = false;
+        try {
+            ps=CON.Conectar().prepareStatement("UPDATE clientes SET condicion=1 WHERE idcliente=?");
+            ps.setInt(1, id);
+            if(ps.executeUpdate()>0){
+                resp=true;
+            }
+            ps.close();
+        } catch (SQLException yeji) {
+            JOptionPane.showMessageDialog(null, "No se pudo activar cliente" + yeji.getMessage());
+        }finally{
+            ps=null;
+            CON.Desconectar();
+        }
+        return resp;
     }
 
     @Override

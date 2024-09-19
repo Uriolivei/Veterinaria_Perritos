@@ -47,6 +47,7 @@ public class ClienteControl {
         }
         return this.modeloTabla;
     }
+
     
     public int total(){
         return datos.total();
@@ -54,5 +55,22 @@ public class ClienteControl {
     
     public int totalMostrados(){
         return this.registrosMostrados;
+    }
+    
+    public String desactivar(int id){
+        if(datos.desactivar(id)){
+            return "OK";
+        }else{
+            return "No se puede desactivar el cliente";
+        }
+    }
+    
+    //metodo para activar
+    public String activar(int id){
+        if(datos.activar(id)){
+            return "OK";
+        }else{
+            return "No se puede activar el cliente";
+        }
     }
 }
