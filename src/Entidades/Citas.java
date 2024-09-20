@@ -2,20 +2,19 @@ package Entidades;
 
 public class Citas {
     private int idcita;
-    private String codigo;
     private String cliente_id;
     private String mascota_id;
     private String trabajador_id;
     private String motivo;
     private boolean condicion;
 
+
     public Citas() {
         
     }
 
-    public Citas(int idcita, String codigo, String cliente_id, String mascota_id, String trabajador_id, String motivo, boolean condicion) {
+    public Citas(int idcita, String cliente_id, String mascota_id, String trabajador_id, String motivo, boolean condicion) {
         this.idcita = idcita;
-        this.codigo = codigo;
         this.cliente_id = cliente_id;
         this.mascota_id = mascota_id;
         this.trabajador_id = trabajador_id;
@@ -29,14 +28,6 @@ public class Citas {
 
     public void setIdcita(int idcita) {
         this.idcita = idcita;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
     }
 
     public String getCliente_id() {
@@ -78,14 +69,12 @@ public class Citas {
     public void setCondicion(boolean condicion) {
         this.condicion = condicion;
     }
+        
 
     @Override
     public String toString() {
-        return "Citas{" + "idcita=" + idcita + ", codigo=" + codigo + ", cliente_id=" + cliente_id + ", mascota_id=" + mascota_id + ", trabajador_id=" + trabajador_id + ", motivo=" + motivo + ", condicion=" + condicion + '}';
+        return "Citas{" + "idcita=" + idcita + ", cliente_id=" + cliente_id + ", mascota_id=" + mascota_id + ", trabajador_id=" + trabajador_id + ", motivo=" + motivo + ", condicion=" + condicion + '}';
     }
 
-    
-
-    
-    
+   
 }

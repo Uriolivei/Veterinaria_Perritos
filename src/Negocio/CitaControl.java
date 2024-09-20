@@ -3,6 +3,7 @@ package Negocio;
 import Datos.CitaDAO;
 import Entidades.Citas;
 import Entidades.Clientes;
+import Entidades.Doctores;
 import Entidades.Mascotas;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,22 +33,34 @@ public class CitaControl {
             comboModel.addElement(cliente.getNombre_cliente());
         }
     }
-    
     return comboModel;
     }
     
     public DefaultComboBoxModel seleccionarPaciente() {
     DefaultComboBoxModel comboModel = new DefaultComboBoxModel();
-    List<Mascotas> listaClientes = datos.seleccionarPaciente();
+    List<Mascotas> listaMascotas = datos.seleccionarPaciente();
     
-    if (listaClientes.isEmpty()) {
-        System.out.println("No hay clientes disponibles."); // Para depuración
+    if (listaMascotas.isEmpty()) {
+        System.out.println("No hay pacientes disponibles."); 
     } else {
-        for (Mascotas mascota : listaClientes) {
+        for (Mascotas mascota : listaMascotas) {
             comboModel.addElement(mascota.getNombre_mascota());
         }
     }
+    return comboModel;
+    }
     
+    public DefaultComboBoxModel seleccionarTrabajador() {
+    DefaultComboBoxModel comboModel = new DefaultComboBoxModel();
+    List<Doctores> listaDoctores = datos.seleccionarTrabajador();
+    
+    if (listaDoctores.isEmpty()) {
+        System.out.println("No hay Trabajadores disponibles.");
+    } else {
+        for (Doctores doctor : listaDoctores) {
+            comboModel.addElement(doctor.getNombre());
+        }
+    }
     return comboModel;
     }
     
@@ -55,7 +68,7 @@ public class CitaControl {
         List<Citas> lista = new ArrayList();
         lista.addAll(datos.listar(texto));
         
-        String[] titulos={"IdCita","Nombre Cliente","Nombre Paciente","Nombre Trabajador","Motivo","Condición"};
+        String[] titulos={"IdCita","Nombre Cliente","Nombre Trabajador","Nombre Paciente","Motivo","Condición"};
         this.modeloTabla=new DefaultTableModel(null,titulos);
         
         String estado;
@@ -81,21 +94,52 @@ public class CitaControl {
         return this.modeloTabla;
     }
     
-    public String insertar(String cliente_id, String mascota_id, String trabajador_id, String motivo){
-        if(datos.existe(cliente_id)){
-            return "El nombre del cliente se encuentra en nuestra BD";
+ 
+    
+    
+    public String insertar(String cliente_id, String mascota_id, String trabajador_id, String motivo) {
+     if(datos.existe(cliente_id)){
+            return "El nombre del paciente se encuentra en nuestra BD";
         }else{
             obj.setCliente_id(cliente_id);
             obj.setMascota_id(mascota_id);
             obj.setTrabajador_id(trabajador_id);
             obj.setMotivo(motivo);
-            if(datos.insertar(obj)){
-                return "OK";
-            }else{
-                return "Error al registar Cliente";
-            }
+            try {
+        } catch (IllegalArgumentException e) {
+            return "Formato de fecha inválido";
+        }
+
+        if (datos.insertar(obj)) {
+            return "OK";
+        } else {
+            return "Error al registrar Paciente";
+        }
+        }
+}
+
+    
+    public String actualizar(int id, String cliente_id, String nombreAnt, String mascota_id, String trabajador_id, String motivo) {
+    obj.setIdcita(id);
+    obj.setCliente_id(cliente_id);
+    obj.setMascota_id(mascota_id);
+    obj.setTrabajador_id(trabajador_id);
+    obj.setMotivo(motivo);
+
+    // Verificar si el cliente ha cambiado
+    if (!cliente_id.equals(nombreAnt)) {
+        if (datos.existe(cliente_id)) { 
+            return "El cliente ya existe";
         }
     }
+
+    // Intentar actualizar
+    if (datos.actualizar(obj)) {
+        return "OK";
+    } else {
+        return "Error en la actualización";
+    }
+}
     
     public int total(){
         return datos.total();

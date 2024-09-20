@@ -245,46 +245,49 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtBuscar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnDesactivar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnActivar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDesactivar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnActivar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(247, 247, 247))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(17, 17, 17)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnDesactivar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnActivar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnRegistrar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEditar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDesactivar)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnActivar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         Tabgeneral.addTab("Listado de Doctores", jPanel2);
@@ -420,9 +423,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblMensaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDniDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblMensaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblMensaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,49 +436,57 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                             .addComponent(lblMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtNombreDoctor, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(45, 45, 45)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(lblMensaje3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtTelefonoDoctor, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtCorreoDoctor)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGap(113, 113, 113)
-                            .addComponent(lblMensaje4, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(37, 37, 37))
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(61, 61, 61)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(lblMensaje4, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txtCorreoDoctor, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                                        .addGap(106, 106, 106))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblMensaje3, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTelefonoDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNombreDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtTelefonoDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblMensaje3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41))
+                        .addGap(42, 42, 42)
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombreDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(txtTelefonoDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(4, 4, 4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(lblMensaje3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtDniDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -485,21 +494,14 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblMensaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblMensaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblMensaje4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtDniDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(90, 90, 90))
+                            .addComponent(lblMensaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblMensaje4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblMensaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
 
         Tabgeneral.addTab("Registro de Doctores", jPanel1);
@@ -508,91 +510,17 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Tabgeneral)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Tabgeneral)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Tabgeneral, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Tabgeneral)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtNombreDoctorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreDoctorKeyReleased
-        // TODO add your handling code here:
-        validarDNI();
-    }//GEN-LAST:event_txtNombreDoctorKeyReleased
-
-    private void txtDniDoctorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniDoctorKeyReleased
-        // TODO add your handling code here:
-        validarNombre();
-    }//GEN-LAST:event_txtDniDoctorKeyReleased
-
-    private void txtTelefonoDoctorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoDoctorKeyReleased
-        // TODO add your handling code here:
-        validarTelefono();
-    }//GEN-LAST:event_txtTelefonoDoctorKeyReleased
-
-    private void txtCorreoDoctorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoDoctorKeyReleased
-        // TODO add your handling code here:
-        validarCorreo();
-    }//GEN-LAST:event_txtCorreoDoctorKeyReleased
-
-    private void txtNombreDoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreDoctorFocusGained
-        // TODO add your handling code here:
-        if(txtNombreDoctor.getText().equals("Escriba aquí...")){
-            txtNombreDoctor.setText("");
-        }
-    }//GEN-LAST:event_txtNombreDoctorFocusGained
-
-    private void txtNombreDoctorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreDoctorFocusLost
-        // TODO add your handling code here:
-        if(txtNombreDoctor.getText().isEmpty()){
-            txtNombreDoctor.setText("Escriba aquí...");
-        }
-    }//GEN-LAST:event_txtNombreDoctorFocusLost
-
-    private void txtDniDoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniDoctorFocusGained
-        // TODO add your handling code here:
-        if(txtDniDoctor.getText().equals("Escriba aquí...")){
-            txtDniDoctor.setText("");
-        }
-    }//GEN-LAST:event_txtDniDoctorFocusGained
-
-    private void txtDniDoctorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniDoctorFocusLost
-        // TODO add your handling code here:
-        if(txtDniDoctor.getText().isEmpty()){
-            txtDniDoctor.setText("Escriba aquí...");
-        }
-    }//GEN-LAST:event_txtDniDoctorFocusLost
-
-    private void txtTelefonoDoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoDoctorFocusGained
-        // TODO add your handling code here:
-        if(txtTelefonoDoctor.getText().equals("Escriba aquí...")){
-            txtTelefonoDoctor.setText("");
-        }
-    }//GEN-LAST:event_txtTelefonoDoctorFocusGained
-
-    private void txtTelefonoDoctorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoDoctorFocusLost
-        // TODO add your handling code here:
-        if(txtTelefonoDoctor.getText().isEmpty()){
-            txtTelefonoDoctor.setText("Escriba aquí...");
-        }
-    }//GEN-LAST:event_txtTelefonoDoctorFocusLost
-
-    private void txtCorreoDoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCorreoDoctorFocusGained
-        // TODO add your handling code here:
-        if(txtCorreoDoctor.getText().equals("Escriba aquí...")){
-            txtCorreoDoctor.setText("");
-        }
-    }//GEN-LAST:event_txtCorreoDoctorFocusGained
-
-    private void txtCorreoDoctorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCorreoDoctorFocusLost
-        // TODO add your handling code here:
-        if(txtCorreoDoctor.getText().isEmpty()){
-            txtCorreoDoctor.setText("Escriba aquí...");
-        }
-    }//GEN-LAST:event_txtCorreoDoctorFocusLost
 
     private void txtBuscarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarFocusGained
         // TODO add your handling code here:
@@ -660,70 +588,6 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
         btnGuardar.setText("Guardar");
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
-        Tabgeneral.setEnabledAt(0,true);
-        Tabgeneral.setEnabledAt(1,false);
-        Tabgeneral.setSelectedIndex(0);
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
-        if(txtNombreDoctor.getText().length() == 0 || txtNombreDoctor.getText().length() > 20){
-            JOptionPane.showMessageDialog(this, "Debes ingresar un nombre y no debe ser mayor a 50 caracteres, " + " es obligatorio",
-                    "Advertencia",JOptionPane.WARNING_MESSAGE);
-            txtNombreDoctor.requestFocus();
-            return;
-        }
-        if(txtDniDoctor.getText().length() == 0 || txtDniDoctor.getText().length() > 255){
-            JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 10 caracteres, " + " es obligatorio",
-                    "Advertencia",JOptionPane.WARNING_MESSAGE);
-            txtDniDoctor.requestFocus();
-            return;
-        }
-        
-        if(txtTelefonoDoctor.getText().length() == 0 || txtTelefonoDoctor.getText().length() > 255){
-            JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 15 caracteres, " + " es obligatorio",
-                    "Advertencia",JOptionPane.WARNING_MESSAGE);
-            txtTelefonoDoctor.requestFocus();
-            return;
-        }
-        
-        if(txtCorreoDoctor.getText().length() == 0 || txtCorreoDoctor.getText().length() > 255){
-            JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 3 caracteres, " + " es obligatorio",
-                    "Advertencia",JOptionPane.WARNING_MESSAGE);
-            txtCorreoDoctor.requestFocus();
-            return;
-        }
-        String resp;
-        if(this.accion.equals("editar")){
-            //Condicional para editar
-            resp = this.CONTROL.actualizar(Integer.parseInt(txtId.getText()), txtNombreDoctor.getText(), nombreAnt, txtDniDoctor.getText(),
-                    txtTelefonoDoctor.getText(),txtCorreoDoctor.getText());
-            if(resp.equals("OK")){
-                this.mensajeOk("Actualizado corectamente");
-                this.listar("");
-                Tabgeneral.setSelectedIndex(0);
-                Tabgeneral.setEnabledAt(1, false);
-                Tabgeneral.setEnabledAt(0, true);
-            }else{
-                this.mensajeError(resp);
-            }
-        }else{
-            //condicional para guardar
-            resp = this.CONTROL.insertar(txtNombreDoctor.getText(), txtDniDoctor.getText(),txtTelefonoDoctor.getText(),txtCorreoDoctor.getText());
-            if(resp.equals("OK")){
-                this.mensajeOk("Registrado corectamente");
-                this.listar("");
-                Tabgeneral.setSelectedIndex(0);
-                Tabgeneral.setEnabledAt(1, false);
-                Tabgeneral.setEnabledAt(0, true);
-            }else{
-                this.mensajeError(resp);
-            }
-        }
-    }//GEN-LAST:event_btnGuardarActionPerformed
-
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
         if(Listado.getSelectedRowCount() == 1){
@@ -749,6 +613,146 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
             this.mensajeError("Selecionar 1 registro para editar");
         }
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+        Tabgeneral.setEnabledAt(0,true);
+        Tabgeneral.setEnabledAt(1,false);
+        Tabgeneral.setSelectedIndex(0);
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+        if(txtNombreDoctor.getText().length() == 0 || txtNombreDoctor.getText().length() > 20){
+            JOptionPane.showMessageDialog(this, "Debes ingresar un nombre y no debe ser mayor a 50 caracteres, " + " es obligatorio",
+                "Advertencia",JOptionPane.WARNING_MESSAGE);
+            txtNombreDoctor.requestFocus();
+            return;
+        }
+        if(txtDniDoctor.getText().length() == 0 || txtDniDoctor.getText().length() > 255){
+            JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 10 caracteres, " + " es obligatorio",
+                "Advertencia",JOptionPane.WARNING_MESSAGE);
+            txtDniDoctor.requestFocus();
+            return;
+        }
+
+        if(txtTelefonoDoctor.getText().length() == 0 || txtTelefonoDoctor.getText().length() > 255){
+            JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 15 caracteres, " + " es obligatorio",
+                "Advertencia",JOptionPane.WARNING_MESSAGE);
+            txtTelefonoDoctor.requestFocus();
+            return;
+        }
+
+        if(txtCorreoDoctor.getText().length() == 0 || txtCorreoDoctor.getText().length() > 255){
+            JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 3 caracteres, " + " es obligatorio",
+                "Advertencia",JOptionPane.WARNING_MESSAGE);
+            txtCorreoDoctor.requestFocus();
+            return;
+        }
+        String resp;
+        if(this.accion.equals("editar")){
+            //Condicional para editar
+            resp = this.CONTROL.actualizar(Integer.parseInt(txtId.getText()), txtNombreDoctor.getText(), nombreAnt, txtDniDoctor.getText(),
+                txtTelefonoDoctor.getText(),txtCorreoDoctor.getText());
+            if(resp.equals("OK")){
+                this.mensajeOk("Actualizado corectamente");
+                this.listar("");
+                Tabgeneral.setSelectedIndex(0);
+                Tabgeneral.setEnabledAt(1, false);
+                Tabgeneral.setEnabledAt(0, true);
+            }else{
+                this.mensajeError(resp);
+            }
+        }else{
+            //condicional para guardar
+            resp = this.CONTROL.insertar(txtNombreDoctor.getText(), txtDniDoctor.getText(),txtTelefonoDoctor.getText(),txtCorreoDoctor.getText());
+            if(resp.equals("OK")){
+                this.mensajeOk("Registrado corectamente");
+                this.listar("");
+                Tabgeneral.setSelectedIndex(0);
+                Tabgeneral.setEnabledAt(1, false);
+                Tabgeneral.setEnabledAt(0, true);
+            }else{
+                this.mensajeError(resp);
+            }
+        }
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void txtCorreoDoctorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoDoctorKeyReleased
+        // TODO add your handling code here:
+        validarCorreo();
+    }//GEN-LAST:event_txtCorreoDoctorKeyReleased
+
+    private void txtCorreoDoctorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCorreoDoctorFocusLost
+        // TODO add your handling code here:
+        if(txtCorreoDoctor.getText().isEmpty()){
+            txtCorreoDoctor.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtCorreoDoctorFocusLost
+
+    private void txtCorreoDoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCorreoDoctorFocusGained
+        // TODO add your handling code here:
+        if(txtCorreoDoctor.getText().equals("Escriba aquí...")){
+            txtCorreoDoctor.setText("");
+        }
+    }//GEN-LAST:event_txtCorreoDoctorFocusGained
+
+    private void txtTelefonoDoctorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoDoctorKeyReleased
+        // TODO add your handling code here:
+        validarTelefono();
+    }//GEN-LAST:event_txtTelefonoDoctorKeyReleased
+
+    private void txtTelefonoDoctorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoDoctorFocusLost
+        // TODO add your handling code here:
+        if(txtTelefonoDoctor.getText().isEmpty()){
+            txtTelefonoDoctor.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtTelefonoDoctorFocusLost
+
+    private void txtTelefonoDoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoDoctorFocusGained
+        // TODO add your handling code here:
+        if(txtTelefonoDoctor.getText().equals("Escriba aquí...")){
+            txtTelefonoDoctor.setText("");
+        }
+    }//GEN-LAST:event_txtTelefonoDoctorFocusGained
+
+    private void txtDniDoctorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniDoctorKeyReleased
+        // TODO add your handling code here:
+        validarNombre();
+    }//GEN-LAST:event_txtDniDoctorKeyReleased
+
+    private void txtDniDoctorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniDoctorFocusLost
+        // TODO add your handling code here:
+        if(txtDniDoctor.getText().isEmpty()){
+            txtDniDoctor.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtDniDoctorFocusLost
+
+    private void txtDniDoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniDoctorFocusGained
+        // TODO add your handling code here:
+        if(txtDniDoctor.getText().equals("Escriba aquí...")){
+            txtDniDoctor.setText("");
+        }
+    }//GEN-LAST:event_txtDniDoctorFocusGained
+
+    private void txtNombreDoctorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreDoctorKeyReleased
+        // TODO add your handling code here:
+        validarDNI();
+    }//GEN-LAST:event_txtNombreDoctorKeyReleased
+
+    private void txtNombreDoctorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreDoctorFocusLost
+        // TODO add your handling code here:
+        if(txtNombreDoctor.getText().isEmpty()){
+            txtNombreDoctor.setText("Escriba aquí...");
+        }
+    }//GEN-LAST:event_txtNombreDoctorFocusLost
+
+    private void txtNombreDoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreDoctorFocusGained
+        // TODO add your handling code here:
+        if(txtNombreDoctor.getText().equals("Escriba aquí...")){
+            txtNombreDoctor.setText("");
+        }
+    }//GEN-LAST:event_txtNombreDoctorFocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

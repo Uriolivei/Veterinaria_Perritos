@@ -29,8 +29,9 @@ public class PacienteDAO implements PacienteInterface<Mascotas> {
             ps.setString(1, "%" + texto + "%");
             rs=ps.executeQuery();
             while(rs.next()){
+                java.sql.Date fechaNacimiento = rs.getDate(7); 
                 registros.add(new Mascotas(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getDouble(5),
-                rs.getString(6),rs.getString(7),rs.getBoolean(8)));
+                rs.getString(6),fechaNacimiento,rs.getBoolean(8)));
             }
             ps.close();
             rs.close();
@@ -54,7 +55,8 @@ public class PacienteDAO implements PacienteInterface<Mascotas> {
             ps.setString(3, obj.getColor());
             ps.setDouble(4, obj.getPeso());
             ps.setString(5, obj.getEdad());
-            ps.setString(6, obj.getFecha_nacimiento());
+            java.sql.Date fechaNacimiento = new java.sql.Date(obj.getFecha_nacimiento().getTime());
+            ps.setDate(6, fechaNacimiento);
             if(ps.executeUpdate()>0){
                 resp=true;
             }
@@ -78,7 +80,8 @@ public class PacienteDAO implements PacienteInterface<Mascotas> {
            ps.setString(3, obj.getColor());
            ps.setDouble(4, obj.getPeso());
            ps.setString(5,obj.getEdad());
-           ps.setString(6,obj.getFecha_nacimiento());
+           java.sql.Date fechaNacimiento = new java.sql.Date(obj.getFecha_nacimiento().getTime());
+           ps.setDate(6, fechaNacimiento);
            if(ps.executeUpdate()>0){
                resp = true;
            }

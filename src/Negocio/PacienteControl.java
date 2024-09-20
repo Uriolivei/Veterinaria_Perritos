@@ -43,7 +43,8 @@ public class PacienteControl {
             registro[3]=item.getColor();
             registro[4]=Double.toString(item.getPeso());
             registro[5]=item.getEdad();
-            registro[6]=item.getFecha_nacimiento();
+            java.sql.Date fechaNacimiento = item.getFecha_nacimiento();
+            registro[6] = (fechaNacimiento != null) ? fechaNacimiento.toString() : "";
             registro[7]=estado;
             this.modeloTabla.addRow(registro);
             this.registrosMostrados++;
@@ -60,12 +61,18 @@ public class PacienteControl {
             obj.setColor(color);
             obj.setPeso(peso);
             obj.setEdad(edad);
-            obj.setFecha_nacimiento(fecha_nacimiento);
-            if(datos.insertar(obj)){
-                return "OK";
-            }else{
-                return "Error al registar Paciente";
-            }
+            try {
+            java.sql.Date fechaSQL = java.sql.Date.valueOf(fecha_nacimiento); // formato de fecha: "yyyy-mm-dd"
+            obj.setFecha_nacimiento(fechaSQL);
+        } catch (IllegalArgumentException e) {
+            return "Formato de fecha inválido";
+        }
+
+        if (datos.insertar(obj)) {
+            return "OK";
+        } else {
+            return "Error al registrar Paciente";
+        }
         }
     }
     
@@ -77,7 +84,12 @@ public class PacienteControl {
             obj.setColor(color);
             obj.setPeso(peso);
             obj.setEdad(edad);
-            obj.setFecha_nacimiento(fecha_nacimiento);
+            try {
+            java.sql.Date fechaSQL = java.sql.Date.valueOf(fecha_nacimiento); // formato de fecha: "yyyy-mm-dd"
+            obj.setFecha_nacimiento(fechaSQL);
+        } catch (IllegalArgumentException e) {
+            return "Formato de fecha inválido";
+        }
             if(datos.actualizar(obj)){
                 return "OK";
             }else{
@@ -93,7 +105,12 @@ public class PacienteControl {
                 obj.setColor(color);
                 obj.setPeso(peso);
                 obj.setEdad(edad);
-                obj.setFecha_nacimiento(fecha_nacimiento);
+                try {
+            java.sql.Date fechaSQL = java.sql.Date.valueOf(fecha_nacimiento); // formato de fecha: "yyyy-mm-dd"
+            obj.setFecha_nacimiento(fechaSQL);
+        } catch (IllegalArgumentException e) {
+            return "Formato de fecha inválido";
+        }
                 if(datos.actualizar(obj)){
                     return "OK";
                 }else{

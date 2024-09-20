@@ -4,6 +4,7 @@ import DataBase.Conexion;
 import Datos.CrudInterface.CitaInterface;
 import Entidades.Citas;
 import Entidades.Clientes;
+import Entidades.Doctores;
 import Entidades.Mascotas;
 import java.security.Timestamp;
 import java.sql.PreparedStatement;
@@ -11,7 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 public class CitaDAO implements CitaInterface<Citas>{
@@ -28,26 +28,14 @@ public class CitaDAO implements CitaInterface<Citas>{
     public List<Citas> listar(String texto) {
         List<Citas> registros = new ArrayList<>();
         try {
-            ps=CON.Conectar().prepareStatement(
-                    "SELECT c.idcita AS Idcita, " +
-             "c.codigo, " + // Aquí falta la coma
-             "cl.nombre_cliente AS Nombre_Cliente, " + 
-             "m.nombre_mascota AS Nombre_Paciente, " + 
-             "t.nombre AS Nombre_Trabajador, " + 
-             "c.motivo, " + 
-             "c.condicion " + 
-             "FROM citas c " +
-             "INNER JOIN clientes cl ON c.cliente_id = cl.idcliente " + 
-             "INNER JOIN mascotas m ON c.mascota_id = m.idmascota " + 
-             "INNER JOIN trabajadores t ON c.trabajador_id = t.idtrabajador " + 
-             "WHERE c.cliente_id LIKE ?"
+            ps=CON.Conectar().prepareStatement("SELECT * FROM citas WHERE cliente_id LIKE ?"
             
             );
             ps.setString(1, "%" + texto + "%");
             rs=ps.executeQuery();
             while(rs.next()){
                 registros.add(new Citas(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), 
-                rs.getString(5),rs.getString(6),rs.getBoolean(7)));
+                rs.getString(5),rs.getBoolean(6)));
             }
             ps.close();
             rs.close();
@@ -65,18 +53,17 @@ public class CitaDAO implements CitaInterface<Citas>{
     public boolean insertar(Citas obj) {
         resp=false;
            try {
-            ps=CON.Conectar().prepareStatement("INSERT INTO citas(codigo,cliente_id,mascota_id,trabajador_id,motivo,condicion) VALUES(?,?,?,?,?,1)");
-            ps.setString(1, obj.getCodigo());
-            ps.setString(2, obj.getCliente_id());
-            ps.setString(3, obj.getMascota_id());
-            ps.setString(4, obj.getTrabajador_id());
-            ps.setString(5, obj.getMotivo());
+            ps=CON.Conectar().prepareStatement("INSERT INTO citas(cliente_id,mascota_id,trabajador_id,motivo,condicion) VALUES(?,?,?,?,1)");
+            ps.setString(1, obj.getCliente_id());
+            ps.setString(2, obj.getMascota_id());
+            ps.setString(3, obj.getTrabajador_id());
+            ps.setString(4, obj.getMotivo());
             if(ps.executeUpdate()>0){
                 resp=true;
             }
             ps.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, " Error al registrar categoria " + e.getMessage());
+            JOptionPane.showMessageDialog(null, " Error al registrar cita " + e.getMessage());
         }finally{
                ps=null;
                CON.Desconectar();
@@ -86,7 +73,25 @@ public class CitaDAO implements CitaInterface<Citas>{
 
     @Override
     public boolean actualizar(Citas obj) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        resp=false;
+        try {
+           ps=CON.Conectar().prepareStatement("UPDATE citas SET cliente_id=?, mascota_id=?, trabajador_id=?, motivo=? WHERE idcita=?");
+           ps.setString(1, obj.getCliente_id());
+           ps.setString(2, obj.getMascota_id());
+           ps.setString(3, obj.getTrabajador_id());
+           ps.setString(4, obj.getMotivo());
+           ps.setInt(5,obj.getIdcita());
+           if(ps.executeUpdate()>0){
+               resp = true;
+           }
+           ps.close();
+        } catch (SQLException yeji) {
+            JOptionPane.showMessageDialog(null, "No se puede actualizar los datos" + yeji.getMessage());
+        }finally{
+            ps=null;
+            CON.Desconectar();
+        }
+        return resp;
     }
 
     @Override
@@ -152,7 +157,7 @@ public class CitaDAO implements CitaInterface<Citas>{
     public boolean existe(String texto) {
         resp = false;
         try{
-            ps=CON.Conectar().prepareStatement("SELECT codigo FROM citas WHERE codigo=?");
+            ps=CON.Conectar().prepareStatement("SELECT cliente_id FROM citas WHERE cliente_id=?");
             ps.setString(1,texto);
             rs=ps.executeQuery();
             rs.last();
@@ -231,6 +236,34 @@ public class CitaDAO implements CitaInterface<Citas>{
         }
         return registros;
     }  
-
     
+    public List<Doctores> seleccionarTrabajador() {
+    List<Doctores> registros = new ArrayList<>();
+    try {
+        // Consulta SQL para obtener id y nombre de los clientes
+        ps = CON.Conectar().prepareStatement("SELECT idtrabajador, nombre, DNI, telefono, correo, condicion FROM trabajadores ORDER BY nombre ASC");
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            registros.add(new Doctores(
+                rs.getInt(1),      
+                rs.getString(2),   
+                rs.getString(3),    
+                rs.getString(4), 
+                rs.getString(5),
+                rs.getBoolean(6)
+            ));
+        }
+        ps.close();
+        rs.close();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "No se pueden cargar los Trabajadores: " + e.getMessage());
+        } finally {
+        ps = null;
+        rs = null;
+        CON.Desconectar();
+        }
+        return registros;
+    } 
+
 }
+
