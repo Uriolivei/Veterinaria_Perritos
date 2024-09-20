@@ -22,7 +22,7 @@ public class ClienteControl {
         List<Clientes> lista = new ArrayList();
         lista.addAll(datos.listar(texto));
         
-        String[] titulos={"IdCliente","Nombre Cliente","DNI Cliente","Teléfono","Edad","Condición"};
+        String[] titulos={"IdCliente","Nombre Cliente","DNI","Teléfono","Edad","Condición"};
         this.modeloTabla=new DefaultTableModel(null,titulos);
         
         String estado;
@@ -40,14 +40,58 @@ public class ClienteControl {
             registro[1]=item.getNombre_cliente();
             registro[2]=item.getDNI();
             registro[3]=item.getTelefono();
-            registro[4]=Integer.toString(item.getEdad());
+            registro[4]=item.getEdad();
             registro[5]=estado;
             this.modeloTabla.addRow(registro);
-            this.registrosMostrados=this.registrosMostrados + 1;
+            this.registrosMostrados++;
         }
         return this.modeloTabla;
     }
-
+    
+    public String insertar(String nombre, String DNI, String telefono, String edad){
+        if(datos.existe(nombre)){
+            return "El nombre del cliente se encuentra en nuestra BD";
+        }else{
+            obj.setNombre_cliente(nombre);
+            obj.setDNI(DNI);
+            obj.setTelefono(telefono);
+            obj.setEdad(edad);
+            if(datos.insertar(obj)){
+                return "OK";
+            }else{
+                return "Error al registar Cliente";
+            }
+        }
+    }
+    
+    public String actualizar(int id,String nombre, String nombreAnt,String DNI,String telefono, String edad){
+        if(nombre.equals(nombreAnt)){
+            obj.setNombre_cliente(nombre);
+            obj.setDNI(DNI);
+            obj.setTelefono(telefono);
+            obj.setEdad(edad);
+            if(datos.actualizar(obj)){
+                return "OK";
+            }else{
+                return "Error en la actualización";
+            }
+        }else{
+            if(datos.existe(nombre)){
+                return "El cliente ya existe";
+            }else{
+                obj.setNombre_cliente(nombre);
+                obj.setDNI(DNI);
+                obj.setTelefono(telefono);
+                obj.setEdad(edad);
+                if(datos.actualizar(obj)){
+                    return "OK";
+                }else{
+                    return "ERROR en la actualización";
+                }
+            }
+        }
+        
+    }
     
     public int total(){
         return datos.total();

@@ -5,13 +5,13 @@ public class Clientes {
     private String nombre_cliente;
     private String DNI;
     private String telefono;
-    private int edad;
+    private String edad;
     private boolean condicion;
 
     public Clientes() {
     }
 
-    public Clientes(int idcliente, String nombre_cliente, String DNI, String telefono, int edad, boolean condicion) {
+    public Clientes(int idcliente, String nombre_cliente, String DNI, String telefono, String edad, boolean condicion) {
         this.idcliente = idcliente;
         this.nombre_cliente = nombre_cliente;
         this.DNI = DNI;
@@ -52,11 +52,11 @@ public class Clientes {
         this.telefono = telefono;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 

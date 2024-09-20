@@ -29,7 +29,7 @@ public class ClienteDAO implements ClienteInterface<Clientes>{
             rs=ps.executeQuery();
             while(rs.next()){
                 registros.add(new Clientes(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), 
-                rs.getInt(5),rs.getBoolean(6)));
+                rs.getString(5),rs.getBoolean(6)));
             }
             ps.close();
             rs.close();
@@ -51,13 +51,13 @@ public class ClienteDAO implements ClienteInterface<Clientes>{
             ps.setString(1, obj.getNombre_cliente());
             ps.setString(2, obj.getDNI());
             ps.setString(3, obj.getTelefono());
-            ps.setInt(4, obj.getEdad());
+            ps.setString(4, obj.getEdad());
             if(ps.executeUpdate()>0){
                 resp=true;
             }
             ps.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, " Error al registrar categoria " + e.getMessage());
+            JOptionPane.showMessageDialog(null, " Error al registrar cliente " + e.getMessage());
         }finally{
                ps=null;
                CON.Desconectar();
@@ -69,11 +69,12 @@ public class ClienteDAO implements ClienteInterface<Clientes>{
     public boolean actualizar(Clientes obj) {
         resp=false;
         try {
-           ps=CON.Conectar().prepareStatement("UPDATE categorias SET nombre=?, descripcion=? WHERE idcategoria=?");
+           ps=CON.Conectar().prepareStatement("UPDATE clientes SET nombre_cliente=?, DNI=?, telefono=?, edad=? WHERE idcliente=?");
            ps.setString(1, obj.getNombre_cliente());
            ps.setString(2, obj.getDNI());
            ps.setString(3, obj.getTelefono());
-           ps.setInt(4, obj.getEdad());
+           ps.setString(4, obj.getEdad());
+           ps.setInt(5,obj.getIdcliente());
            if(ps.executeUpdate()>0){
                resp = true;
            }
@@ -137,7 +138,7 @@ public class ClienteDAO implements ClienteInterface<Clientes>{
           rs.close();
           ps.close();
         } catch (Exception yeji) {
-            JOptionPane.showMessageDialog(null,"No se puede obtener el total de categorias" + yeji.getMessage());
+            JOptionPane.showMessageDialog(null,"No se puede obtener el total de clientes" + yeji.getMessage());
         }finally{
             ps=null;
             rs=null;
@@ -148,8 +149,24 @@ public class ClienteDAO implements ClienteInterface<Clientes>{
 
     @Override
     public boolean existe(String texto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
+        resp = false;
+        try{
+            ps=CON.Conectar().prepareStatement("SELECT nombre_cliente FROM clientes WHERE nombre_cliente=?");
+            ps.setString(1,texto);
+            rs=ps.executeQuery();
+            rs.last();
+            if(rs.getRow()>0){
+                resp=true;
+            }
+            rs.close();
+            ps.close();
+        }catch(SQLException yeji){
+            JOptionPane.showMessageDialog(null,"No se puede validar datos" + yeji.getMessage());
+        }finally{
+            ps=null;
+            rs=null;
+            CON.Desconectar();
+        }
+        return resp;
+    }   
 }
