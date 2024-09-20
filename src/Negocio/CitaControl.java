@@ -98,25 +98,22 @@ public class CitaControl {
     
     
     public String insertar(String cliente_id, String mascota_id, String trabajador_id, String motivo) {
-     if(datos.existe(cliente_id)){
-            return "El nombre del paciente se encuentra en nuestra BD";
-        }else{
-            obj.setCliente_id(cliente_id);
-            obj.setMascota_id(mascota_id);
-            obj.setTrabajador_id(trabajador_id);
-            obj.setMotivo(motivo);
-            try {
-        } catch (IllegalArgumentException e) {
-            return "Formato de fecha inválido";
-        }
+    if(datos.existe(cliente_id, mascota_id)) {
+        return "La combinación de cliente y mascota ya existe en nuestraBD.";
+    } else {
+        obj.setCliente_id(cliente_id);
+        obj.setMascota_id(mascota_id);
+        obj.setTrabajador_id(trabajador_id);
+        obj.setMotivo(motivo);
 
         if (datos.insertar(obj)) {
             return "OK";
         } else {
-            return "Error al registrar Paciente";
+            return "Error al registrar la cita.";
         }
-        }
+    }
 }
+
 
     
     public String actualizar(int id, String cliente_id, String nombreAnt, String mascota_id, String trabajador_id, String motivo) {
@@ -128,7 +125,7 @@ public class CitaControl {
 
     // Verificar si el cliente ha cambiado
     if (!cliente_id.equals(nombreAnt)) {
-        if (datos.existe(cliente_id)) { 
+        if (datos.existe(cliente_id,mascota_id)) { 
             return "El cliente ya existe";
         }
     }

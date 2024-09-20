@@ -9,5 +9,5 @@ public interface CitaInterface<T> {
    public boolean desactivar(int id);
    public boolean activar(int id);
    public int total();
-   public boolean existe(String texto);
+   public boolean existe(String cliente_id,String mascota_id);
 }

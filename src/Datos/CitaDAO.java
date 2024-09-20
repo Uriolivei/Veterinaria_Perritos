@@ -154,14 +154,14 @@ public class CitaDAO implements CitaInterface<Citas>{
     }
 
     @Override
-    public boolean existe(String texto) {
+    public boolean existe(String cliente_id,String mascota_id) {
         resp = false;
         try{
-            ps=CON.Conectar().prepareStatement("SELECT cliente_id FROM citas WHERE cliente_id=?");
-            ps.setString(1,texto);
-            rs=ps.executeQuery();
-            rs.last();
-            if(rs.getRow()>0){
+            ps=CON.Conectar().prepareStatement("SELECT COUNT(*) FROM citas WHERE cliente_id = ? AND mascota_id = ?");
+            ps.setString(1,cliente_id);
+            ps.setString(2,mascota_id);
+            rs = ps.executeQuery(); 
+            if(rs.next() && rs.getInt(1) > 0){
                 resp=true;
             }
             rs.close();

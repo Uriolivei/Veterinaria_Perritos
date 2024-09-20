@@ -460,6 +460,28 @@ public class FrmCitas extends javax.swing.JInternalFrame {
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
+        if(Listado.getSelectedRowCount() == 1){
+            String id = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 0));
+            String cliente_id = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 1));
+            this.nombreAnt = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 1));
+            String mascota_id = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 2));
+            String trabajador_id = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 3));
+            String motivo = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 4));
+            
+            txtId.setText(id);
+            cboCliente.setSelectedItem(cliente_id);
+            cboPaciente.setSelectedItem(mascota_id);
+            cboTrabajador.setSelectedItem(trabajador_id);
+            cboMotivo.setSelectedItem(motivo);
+           
+            Tabgeneral.setEnabledAt(0, false);
+            Tabgeneral.setEnabledAt(1, true);
+            Tabgeneral.setSelectedIndex(1);
+            this.accion = "editar";
+            btnGuardar.setText("Editar");
+        }else{
+            this.mensajeError("Selecionar 1 registro para editar");
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
 
