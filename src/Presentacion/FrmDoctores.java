@@ -235,6 +235,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
             }
         });
 
+        txtTotal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtTotal.setText("Total de Registros:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -290,7 +291,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        Tabgeneral.addTab("Listado de Doctores", jPanel2);
+        Tabgeneral.addTab("Listado de Trabajadores", jPanel2);
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
 
@@ -504,7 +505,7 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
                             .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
 
-        Tabgeneral.addTab("Registro de Doctores", jPanel1);
+        Tabgeneral.addTab("Registro de Trabajadores", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -623,28 +624,28 @@ public class FrmDoctores extends javax.swing.JInternalFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        if(txtNombreDoctor.getText().length() == 0 || txtNombreDoctor.getText().length() > 20){
+        if(txtNombreDoctor.getText().length() == 0 || txtNombreDoctor.getText().length() > 50){
             JOptionPane.showMessageDialog(this, "Debes ingresar un nombre y no debe ser mayor a 50 caracteres, " + " es obligatorio",
                 "Advertencia",JOptionPane.WARNING_MESSAGE);
             txtNombreDoctor.requestFocus();
             return;
         }
-        if(txtDniDoctor.getText().length() == 0 || txtDniDoctor.getText().length() > 255){
+        if(txtDniDoctor.getText().length() == 0 || txtDniDoctor.getText().length() > 10){
             JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 10 caracteres, " + " es obligatorio",
                 "Advertencia",JOptionPane.WARNING_MESSAGE);
             txtDniDoctor.requestFocus();
             return;
         }
 
-        if(txtTelefonoDoctor.getText().length() == 0 || txtTelefonoDoctor.getText().length() > 255){
+        if(txtTelefonoDoctor.getText().length() == 0 || txtTelefonoDoctor.getText().length() > 15){
             JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 15 caracteres, " + " es obligatorio",
                 "Advertencia",JOptionPane.WARNING_MESSAGE);
             txtTelefonoDoctor.requestFocus();
             return;
         }
 
-        if(txtCorreoDoctor.getText().length() == 0 || txtCorreoDoctor.getText().length() > 255){
-            JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 3 caracteres, " + " es obligatorio",
+        if(txtCorreoDoctor.getText().length() == 0 || txtCorreoDoctor.getText().length() > 80){
+            JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 80 caracteres, " + " es obligatorio",
                 "Advertencia",JOptionPane.WARNING_MESSAGE);
             txtCorreoDoctor.requestFocus();
             return;

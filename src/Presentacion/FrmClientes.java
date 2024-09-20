@@ -236,7 +236,7 @@ public class FrmClientes extends javax.swing.JInternalFrame {
             }
         });
 
-        txtTotal.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtTotal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtTotal.setText("Total de Registros:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

@@ -256,7 +256,7 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
             }
         });
 
-        txtTotal.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtTotal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtTotal.setText("Total de Registros:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -777,20 +777,20 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        if (txtNombreMascota.getText().length() == 0 || txtNombreMascota.getText().length() > 20) {
-        JOptionPane.showMessageDialog(this, "Debes ingresar un nombre y no debe ser mayor a 20 caracteres.", 
+        if (txtNombreMascota.getText().length() == 0 || txtNombreMascota.getText().length() > 50) {
+        JOptionPane.showMessageDialog(this, "Debes ingresar un nombre y no debe ser mayor a 50 caracteres.", 
                 "Advertencia", JOptionPane.WARNING_MESSAGE);
         txtNombreMascota.requestFocus();
         return;
     }
-    if (txtRazaMascota.getText().length() == 0 || txtRazaMascota.getText().length() > 255) {
-        JOptionPane.showMessageDialog(this, "Debes ingresar una raza y no debe ser mayor a 255 caracteres.", 
+    if (txtRazaMascota.getText().length() == 0 || txtRazaMascota.getText().length() > 30) {
+        JOptionPane.showMessageDialog(this, "Debes ingresar una raza y no debe ser mayor a 30 caracteres.", 
                 "Advertencia", JOptionPane.WARNING_MESSAGE);
         txtRazaMascota.requestFocus();
         return;
     }
-    if (txtColorMascota.getText().length() == 0 || txtColorMascota.getText().length() > 255) {
-        JOptionPane.showMessageDialog(this, "Debes ingresar un color y no debe ser mayor a 255 caracteres.", 
+    if (txtColorMascota.getText().length() == 0 || txtColorMascota.getText().length() > 20) {
+        JOptionPane.showMessageDialog(this, "Debes ingresar un color y no debe ser mayor a 20 caracteres.", 
                 "Advertencia", JOptionPane.WARNING_MESSAGE);
         txtColorMascota.requestFocus();
         return;

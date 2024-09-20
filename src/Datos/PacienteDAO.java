@@ -74,7 +74,7 @@ public class PacienteDAO implements PacienteInterface<Mascotas> {
     public boolean actualizar(Mascotas obj) {
         resp=false;
         try {
-           ps=CON.Conectar().prepareStatement("UPDATE mascotas SET nombre_mascota=?, raza=?,color=?, peso=?, edad=?, fecha_vencimiento=? WHERE idcliente=?");
+           ps=CON.Conectar().prepareStatement("UPDATE mascotas SET nombre_mascota=?, raza=?,color=?, peso=?, edad=?, fecha_nacimiento=? WHERE idmascota=?");
            ps.setString(1, obj.getNombre_mascota());
            ps.setString(2, obj.getRaza());
            ps.setString(3, obj.getColor());
@@ -82,6 +82,7 @@ public class PacienteDAO implements PacienteInterface<Mascotas> {
            ps.setString(5,obj.getEdad());
            java.sql.Date fechaNacimiento = new java.sql.Date(obj.getFecha_nacimiento().getTime());
            ps.setDate(6, fechaNacimiento);
+           ps.setInt(7, obj.getIdmascota());
            if(ps.executeUpdate()>0){
                resp = true;
            }
