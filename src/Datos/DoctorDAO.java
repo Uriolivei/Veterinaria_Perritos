@@ -47,7 +47,7 @@ public class DoctorDAO implements DoctorInterface<Doctores> {
     public boolean insertar(Doctores obj) {
         resp=false;
            try {
-            ps=CON.Conectar().prepareStatement("INSERT INTO trabajador(nombre,DNI,telefono,correo,condicion) VALUES(?,?,?,?,0)");
+            ps=CON.Conectar().prepareStatement("INSERT INTO trabajadores(nombre,DNI,telefono,correo,condicion) VALUES(?,?,?,?,0)");
             ps.setString(1, obj.getNombre());
             ps.setString(2, obj.getDNI());
             ps.setString(3, obj.getTelefono());
@@ -67,7 +67,25 @@ public class DoctorDAO implements DoctorInterface<Doctores> {
 
     @Override
     public boolean actualizar(Doctores obj) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        resp=false;
+        try {
+           ps=CON.Conectar().prepareStatement("UPDATE trabajadores SET nombre=?, DNI=?, telefono=?, correo=? WHERE idtrabajador=?");
+           ps.setString(1, obj.getNombre());
+           ps.setString(2, obj.getDNI());
+           ps.setString(3, obj.getTelefono());
+           ps.setString(4, obj.getCorreo());
+           ps.setInt(5,obj.getIdtrabajador());
+           if(ps.executeUpdate()>0){
+               resp = true;
+           }
+           ps.close();
+        } catch (SQLException yeji) {
+            JOptionPane.showMessageDialog(null, "No se puede actualizar los datos" + yeji.getMessage());
+        }finally{
+            ps=null;
+            CON.Desconectar();
+        }
+        return resp;
     }
 
     @Override

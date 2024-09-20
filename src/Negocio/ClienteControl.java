@@ -66,6 +66,7 @@ public class ClienteControl {
     
     public String actualizar(int id,String nombre, String nombreAnt,String DNI,String telefono, String edad){
         if(nombre.equals(nombreAnt)){
+            obj.setIdcliente(id);
             obj.setNombre_cliente(nombre);
             obj.setDNI(DNI);
             obj.setTelefono(telefono);

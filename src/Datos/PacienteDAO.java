@@ -70,7 +70,26 @@ public class PacienteDAO implements PacienteInterface<Mascotas> {
 
     @Override
     public boolean actualizar(Mascotas obj) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        resp=false;
+        try {
+           ps=CON.Conectar().prepareStatement("UPDATE mascotas SET nombre_mascota=?, raza=?,color=?, peso=?, edad=?, fecha_vencimiento=? WHERE idcliente=?");
+           ps.setString(1, obj.getNombre_mascota());
+           ps.setString(2, obj.getRaza());
+           ps.setString(3, obj.getColor());
+           ps.setDouble(4, obj.getPeso());
+           ps.setString(5,obj.getEdad());
+           ps.setString(6,obj.getFecha_nacimiento());
+           if(ps.executeUpdate()>0){
+               resp = true;
+           }
+           ps.close();
+        } catch (SQLException yeji) {
+            JOptionPane.showMessageDialog(null, "No se puede actualizar los datos" + yeji.getMessage());
+        }finally{
+            ps=null;
+            CON.Desconectar();
+        }
+        return resp;
     }
 
     @Override

@@ -2,6 +2,9 @@
 package Presentacion;
 
 import Negocio.PacienteControl;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -172,7 +175,8 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         lblSolu3 = new javax.swing.JLabel();
         lblSolu4 = new javax.swing.JLabel();
         lblSolu5 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        txtFecha = new com.toedter.calendar.JDateChooser();
+        txtId = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setClosable(true);
@@ -217,6 +221,11 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
 
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/Imagenes/edit.png"))); // NOI18N
         btnEditar.setText("Editar Pacientes");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         Listado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -274,7 +283,7 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -405,6 +414,11 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         btnGuardar.setFont(new java.awt.Font("Algerian", 0, 12)); // NOI18N
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/Imagenes/guardar.png"))); // NOI18N
         btnGuardar.setText("GUARDAR");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setBackground(new java.awt.Color(255, 255, 153));
         btnCancelar.setFont(new java.awt.Font("Algerian", 0, 12)); // NOI18N
@@ -465,19 +479,21 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lblSolu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtNombreMascota, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))))
-                        .addGap(51, 51, 51)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSolu4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSolu5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtPesoMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblSolu3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtEdadMascota)))
+                            .addComponent(txtEdadMascota, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                            .addComponent(txtPesoMascota)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(146, 146, 146)
                         .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -494,7 +510,8 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPesoMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPesoMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSolu, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -518,7 +535,7 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                        .addComponent(txtFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                         .addGap(11, 11, 11)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblSolu2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -716,6 +733,125 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
         Tabgeneral.setSelectedIndex(0);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        // TODO add your handling code here:
+        if(Listado.getSelectedRowCount() == 1){
+            String id = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 0));
+            String nombre_mascota = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 1));
+            this.nombreAnt = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 1));
+            String raza = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 2));
+            String color = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 3));
+            Double peso = Double.parseDouble(String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 4)));
+            String edad = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 5));
+            String fecha_nacimiento = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 6));
+            
+            txtId.setText(id);
+            txtNombreMascota.setText(nombre_mascota);
+            txtRazaMascota.setText(raza);
+            txtColorMascota.setText(color);
+            txtPesoMascota.setText(String.valueOf(peso));
+            txtEdadMascota.setText(edad);
+            
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); // Cambia el formato si es necesario
+
+            try {
+                Date fecha = formato.parse(fecha_nacimiento); // Convierte String a Date
+                txtFecha.setDate(fecha); // Establece la fecha en el JDateChooser
+            } catch (ParseException e) {
+                // Manejo de excepción
+                
+            }
+           
+            Tabgeneral.setEnabledAt(0, false);
+            Tabgeneral.setEnabledAt(1, true);
+            Tabgeneral.setSelectedIndex(1);
+            this.accion = "editar";
+            btnGuardar.setText("Editar");
+        }else{
+            this.mensajeError("Selecionar 1 registro para editar");
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+        if (txtNombreMascota.getText().length() == 0 || txtNombreMascota.getText().length() > 20) {
+        JOptionPane.showMessageDialog(this, "Debes ingresar un nombre y no debe ser mayor a 20 caracteres.", 
+                "Advertencia", JOptionPane.WARNING_MESSAGE);
+        txtNombreMascota.requestFocus();
+        return;
+    }
+    if (txtRazaMascota.getText().length() == 0 || txtRazaMascota.getText().length() > 255) {
+        JOptionPane.showMessageDialog(this, "Debes ingresar una raza y no debe ser mayor a 255 caracteres.", 
+                "Advertencia", JOptionPane.WARNING_MESSAGE);
+        txtRazaMascota.requestFocus();
+        return;
+    }
+    if (txtColorMascota.getText().length() == 0 || txtColorMascota.getText().length() > 255) {
+        JOptionPane.showMessageDialog(this, "Debes ingresar un color y no debe ser mayor a 255 caracteres.", 
+                "Advertencia", JOptionPane.WARNING_MESSAGE);
+        txtColorMascota.requestFocus();
+        return;
+    }
+    if (txtPesoMascota.getText().length() == 0) {
+        JOptionPane.showMessageDialog(this, "Debes ingresar un peso, es obligatorio.", 
+                "Advertencia", JOptionPane.WARNING_MESSAGE);
+        txtPesoMascota.requestFocus();
+        return;
+    }
+    if (txtEdadMascota.getText().length() == 0) {
+        JOptionPane.showMessageDialog(this, "Debes ingresar una edad, es obligatorio.", 
+                "Advertencia", JOptionPane.WARNING_MESSAGE);
+        txtEdadMascota.requestFocus();
+        return;
+    }
+    
+    Date fechaSeleccionada = txtFecha.getDate();
+    if (fechaSeleccionada == null) {
+        JOptionPane.showMessageDialog(this, "Debes seleccionar una fecha, es obligatorio.", 
+                "Advertencia", JOptionPane.WARNING_MESSAGE);
+        txtFecha.requestFocus();
+        return;
+    }
+    
+    String resp;
+    String fechaString = null;
+    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); // Ajusta según necesites
+
+    if (this.accion.equals("editar")) {
+        // Condicional para editar
+        fechaString = formato.format(fechaSeleccionada);
+
+        resp = this.CONTROL.actualizar(Integer.parseInt(txtId.getText()),txtNombreMascota.getText(),this.nombreAnt, txtRazaMascota.getText(),txtColorMascota.getText(),Double.parseDouble(txtPesoMascota.getText()),
+               txtEdadMascota.getText(),fechaString);
+
+        if (resp.equals("OK")) {
+            this.mensajeOk("Actualizado correctamente");
+            this.listar("");
+            Tabgeneral.setSelectedIndex(0);
+            Tabgeneral.setEnabledAt(1, false);
+            Tabgeneral.setEnabledAt(0, true);
+        } else {
+            this.mensajeError(resp);
+        }
+    } else {
+        // Condicional para guardar
+        fechaString = formato.format(fechaSeleccionada);
+
+        resp = this.CONTROL.insertar(txtNombreMascota.getText(), txtRazaMascota.getText(),txtColorMascota.getText(),Double.parseDouble(txtPesoMascota.getText()),
+               txtEdadMascota.getText(),fechaString);
+
+        if (resp.equals("OK")) {
+            this.mensajeOk("Registrado correctamente");
+            this.listar("");
+            Tabgeneral.setSelectedIndex(0);
+            Tabgeneral.setEnabledAt(1, false);
+            Tabgeneral.setEnabledAt(0, true);
+        } else {
+            this.mensajeError(resp);
+        }
+    }                              
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Listado;
@@ -727,7 +863,6 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnRegistrar;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -747,6 +882,8 @@ public class FrmPacientes extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtColorMascota;
     private javax.swing.JTextField txtEdadMascota;
+    private com.toedter.calendar.JDateChooser txtFecha;
+    private javax.swing.JLabel txtId;
     private javax.swing.JTextField txtNombreMascota;
     private javax.swing.JTextField txtPesoMascota;
     private javax.swing.JTextField txtRazaMascota;

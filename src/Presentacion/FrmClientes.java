@@ -201,6 +201,11 @@ public class FrmClientes extends javax.swing.JInternalFrame {
 
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/Imagenes/edit.png"))); // NOI18N
         btnEditar.setText("Editar Clientes");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         Listado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -716,21 +721,21 @@ public class FrmClientes extends javax.swing.JInternalFrame {
             }else{
                 this.mensajeError(resp);
             }
-        }
-    }                                          
+        }                                        
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
         if(Listado.getSelectedRowCount() == 1){
-            int filaSeleccionada = Listado.getSelectedRow();
-            String id = String.valueOf(Listado.getValueAt(filaSeleccionada, 0));
-            String nombre = String.valueOf(Listado.getValueAt(filaSeleccionada, 1));
-            this.nombreAnt = nombre; // Guardar el nombre actual para comparación
-            String DNI = String.valueOf(Listado.getValueAt(filaSeleccionada, 2));
-            String telefono = String.valueOf(Listado.getValueAt(filaSeleccionada, 3));
-            String edad = String.valueOf(Listado.getValueAt(filaSeleccionada, 4));
+            String id = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 0));
+            String nombre_cliente = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 1));
+            this.nombreAnt = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 1));
+            String DNI = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 2));
+            String telefono = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 3));
+            String edad = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 4));
             
-            txtNombreCliente.setText(nombre);
+            txtId.setText(id);
+            txtNombreCliente.setText(nombre_cliente);
             txtDniCliente.setText(DNI);
             txtTelefonoCliente.setText(telefono);
             txtEdadCliente.setText(edad);
@@ -738,12 +743,12 @@ public class FrmClientes extends javax.swing.JInternalFrame {
             Tabgeneral.setEnabledAt(0, false);
             Tabgeneral.setEnabledAt(1, true);
             Tabgeneral.setSelectedIndex(1);
-            this.accion = "Editar";
+            this.accion = "editar";
             btnGuardar.setText("Editar");
         }else{
             this.mensajeError("Selecionar 1 registro para editar");
         }
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    }//GEN-LAST:event_btnEditarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

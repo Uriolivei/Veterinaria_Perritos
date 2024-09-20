@@ -64,9 +64,44 @@ public class PacienteControl {
             if(datos.insertar(obj)){
                 return "OK";
             }else{
-                return "Error al registar Cliente";
+                return "Error al registar Paciente";
             }
         }
+    }
+    
+    public String actualizar(int id, String nombre_mascota, String nombreAnt,String raza,String color, double peso, String edad,String fecha_nacimiento){
+        if(nombre_mascota.equals(nombreAnt)){
+            obj.setIdmascota(id);
+            obj.setNombre_mascota(nombre_mascota);
+            obj.setRaza(raza);
+            obj.setColor(color);
+            obj.setPeso(peso);
+            obj.setEdad(edad);
+            obj.setFecha_nacimiento(fecha_nacimiento);
+            if(datos.actualizar(obj)){
+                return "OK";
+            }else{
+                return "Error en la actualización";
+            }
+        }else{
+            if(datos.existe(nombre_mascota)){
+                return "El cliente ya existe";
+            }else{
+                obj.setIdmascota(id);
+                obj.setNombre_mascota(nombre_mascota);
+                obj.setRaza(raza);
+                obj.setColor(color);
+                obj.setPeso(peso);
+                obj.setEdad(edad);
+                obj.setFecha_nacimiento(fecha_nacimiento);
+                if(datos.actualizar(obj)){
+                    return "OK";
+                }else{
+                    return "ERROR en la actualización";
+                }
+            }
+        }
+        
     }
     
     public int total(){

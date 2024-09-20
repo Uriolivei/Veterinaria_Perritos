@@ -3,11 +3,15 @@ package Datos;
 import DataBase.Conexion;
 import Datos.CrudInterface.CitaInterface;
 import Entidades.Citas;
+import Entidades.Clientes;
+import Entidades.Mascotas;
+import java.security.Timestamp;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 public class CitaDAO implements CitaInterface<Citas>{
@@ -166,5 +170,67 @@ public class CitaDAO implements CitaInterface<Citas>{
         }
         return resp;
     }
+    
+    public List<Clientes> seleccionar() {
+    List<Clientes> registros = new ArrayList<>();
+    try {
+        // Consulta SQL para obtener id y nombre de los clientes
+        ps = CON.Conectar().prepareStatement("SELECT idcliente, nombre_cliente, DNI, telefono, edad, condicion FROM clientes ORDER BY nombre_cliente ASC");
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            registros.add(new Clientes(
+                rs.getInt(1),
+                rs.getString(2),
+                rs.getString(3),
+                rs.getString(4),
+                rs.getString(5),
+                rs.getBoolean(6)
+            ));
+        }
+        ps.close();
+        rs.close();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "No se pueden cargar los clientes: " + e.getMessage());
+        } finally {
+        ps = null;
+        rs = null;
+        CON.Desconectar();
+        }
+        return registros;
+    }
+    
+    
+    
+    public List<Mascotas> seleccionarPaciente() {
+    List<Mascotas> registros = new ArrayList<>();
+    try {
+        // Consulta SQL para obtener id y nombre de los clientes
+        ps = CON.Conectar().prepareStatement("SELECT idmascota, nombre_mascota, raza, color, peso, edad, fecha_nacimiento, condicion FROM mascotas ORDER BY nombre_mascota ASC");
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            java.sql.Date fechaNacimiento = rs.getDate(7);
+            registros.add(new Mascotas(
+                rs.getInt(1),      
+                rs.getString(2),   
+                rs.getString(3),    
+                rs.getString(4),    
+                rs.getDouble(5),    
+                rs.getString(6),      
+                fechaNacimiento,      
+                rs.getBoolean(8)
+            ));
+        }
+        ps.close();
+        rs.close();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "No se pueden cargar los Pacientes: " + e.getMessage());
+        } finally {
+        ps = null;
+        rs = null;
+        CON.Desconectar();
+        }
+        return registros;
+    }  
+
     
 }

@@ -1,5 +1,7 @@
 package Entidades;
 
+import java.util.Date;
+
 public class Mascotas {
     private int idmascota;
     private String nombre_mascota;
@@ -7,13 +9,13 @@ public class Mascotas {
     private String color;
     private double peso;
     private String edad;
-    private String fecha_nacimiento;
+    private java.sql.Date fecha_nacimiento;
     private boolean condicion;
 
     public Mascotas() {
     }
 
-    public Mascotas(int idmascota, String nombre_mascota, String raza, String color, double peso, String edad, String fecha_nacimiento, boolean condicion) {
+    public Mascotas(int idmascota, String nombre_mascota, String raza, String color, double peso, String edad, java.sql.Date fecha_nacimiento, boolean condicion) {
         this.idmascota = idmascota;
         this.nombre_mascota = nombre_mascota;
         this.raza = raza;
@@ -72,11 +74,11 @@ public class Mascotas {
         this.edad = edad;
     }
 
-    public String getFecha_nacimiento() {
+    public java.sql.Date getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(String fecha_nacimiento) {
+    public void setFecha_nacimiento(java.sql.Date fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
@@ -92,6 +94,5 @@ public class Mascotas {
     public String toString() {
         return "Mascotas{" + "idmascota=" + idmascota + ", nombre_mascota=" + nombre_mascota + ", raza=" + raza + ", color=" + color + ", peso=" + peso + ", edad=" + edad + ", fecha_nacimiento=" + fecha_nacimiento + ", condicion=" + condicion + '}';
     }
-    
     
 }

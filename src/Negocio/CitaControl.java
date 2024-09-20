@@ -2,8 +2,11 @@ package Negocio;
 
 import Datos.CitaDAO;
 import Entidades.Citas;
+import Entidades.Clientes;
+import Entidades.Mascotas;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
 public class CitaControl {
@@ -16,6 +19,36 @@ public class CitaControl {
         this.datos=new CitaDAO();
         this.obj=new Citas();
         this.registrosMostrados=0;
+    }
+    
+    public DefaultComboBoxModel seleccionar() {
+    DefaultComboBoxModel comboModel = new DefaultComboBoxModel();
+    List<Clientes> listaClientes = datos.seleccionar();
+    
+    if (listaClientes.isEmpty()) {
+        System.out.println("No hay clientes disponibles."); // Para depuración
+    } else {
+        for (Clientes cliente : listaClientes) {
+            comboModel.addElement(cliente.getNombre_cliente());
+        }
+    }
+    
+    return comboModel;
+    }
+    
+    public DefaultComboBoxModel seleccionarPaciente() {
+    DefaultComboBoxModel comboModel = new DefaultComboBoxModel();
+    List<Mascotas> listaClientes = datos.seleccionarPaciente();
+    
+    if (listaClientes.isEmpty()) {
+        System.out.println("No hay clientes disponibles."); // Para depuración
+    } else {
+        for (Mascotas mascota : listaClientes) {
+            comboModel.addElement(mascota.getNombre_mascota());
+        }
+    }
+    
+    return comboModel;
     }
     
     public DefaultTableModel listar(String texto){

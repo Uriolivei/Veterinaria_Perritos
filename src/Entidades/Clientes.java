@@ -9,6 +9,7 @@ public class Clientes {
     private boolean condicion;
 
     public Clientes() {
+        
     }
 
     public Clientes(int idcliente, String nombre_cliente, String DNI, String telefono, String edad, boolean condicion) {
