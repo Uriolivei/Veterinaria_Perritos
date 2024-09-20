@@ -51,7 +51,8 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Escritorio.setLayout(new java.awt.BorderLayout());
+        Escritorio.setBackground(new java.awt.Color(0, 153, 153));
+        Escritorio.setLayout(new javax.swing.BoxLayout(Escritorio, javax.swing.BoxLayout.LINE_AXIS));
 
         jMenuBar1.setBackground(new java.awt.Color(153, 153, 255));
 
