@@ -98,8 +98,8 @@ public class CitaControl {
     
     
     public String insertar(String cliente_id, String mascota_id, String trabajador_id, String motivo) {
-    if(datos.existe(cliente_id, mascota_id)) {
-        return "La combinación de cliente y mascota ya existe en nuestraBD.";
+    if(datos.existe(mascota_id)) {
+        return "El nombre de la mascota ya existe en nuestra BD.";
     } else {
         obj.setCliente_id(cliente_id);
         obj.setMascota_id(mascota_id);
@@ -125,7 +125,7 @@ public class CitaControl {
 
     // Verificar si el cliente ha cambiado
     if (!cliente_id.equals(nombreAnt)) {
-        if (datos.existe(cliente_id,mascota_id)) { 
+        if (datos.existe(mascota_id)) { 
             return "El cliente ya existe";
         }
     }

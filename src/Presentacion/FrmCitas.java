@@ -5,6 +5,7 @@
 package Presentacion;
 
 import Negocio.CitaControl;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -371,11 +372,12 @@ public class FrmCitas extends javax.swing.JInternalFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-       String resp;
-       String clienteSeleccionado = cboCliente.getSelectedItem() != null ? cboCliente.getSelectedItem().toString() : "";
-       String trabajadorSeleccionado = cboTrabajador.getSelectedItem() != null ? cboTrabajador.getSelectedItem().toString() : "";
-       String pacienteSeleccionado = cboPaciente.getSelectedItem() != null ? cboPaciente.getSelectedItem().toString() : "";
-       String motivoSeleccionado = cboMotivo.getSelectedItem() != null ? cboMotivo.getSelectedItem().toString() : "";
+        
+        String resp;
+        String clienteSeleccionado = cboCliente.getSelectedItem() != null ? cboCliente.getSelectedItem().toString() : "";
+        String trabajadorSeleccionado = cboTrabajador.getSelectedItem() != null ? cboTrabajador.getSelectedItem().toString() : "";
+        String pacienteSeleccionado = cboPaciente.getSelectedItem() != null ? cboPaciente.getSelectedItem().toString() : "";
+        String motivoSeleccionado = cboMotivo.getSelectedItem() != null ? cboMotivo.getSelectedItem().toString() : "";
         if(this.accion.equals("editar")){
             //Condicional para editar
             resp = this.CONTROL.actualizar(Integer.parseInt(txtId.getText()), clienteSeleccionado, nombreAnt, trabajadorSeleccionado,

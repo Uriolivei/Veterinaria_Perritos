@@ -677,27 +677,27 @@ public class FrmClientes extends javax.swing.JInternalFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        if(txtNombreCliente.getText().length() == 0 || txtNombreCliente.getText().length() > 20){
+        if(txtNombreCliente.getText().length() == 0 || txtNombreCliente.getText().length() > 50){
             JOptionPane.showMessageDialog(this, "Debes ingresar un nombre y no debe ser mayor a 50 caracteres, " + " es obligatorio",
                     "Advertencia",JOptionPane.WARNING_MESSAGE);
             txtNombreCliente.requestFocus();
             return;
         }
-        if(txtDniCliente.getText().length() == 0 || txtDniCliente.getText().length() > 255){
+        if(txtDniCliente.getText().length() == 0 || txtDniCliente.getText().length() > 10){
             JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 10 caracteres, " + " es obligatorio",
                     "Advertencia",JOptionPane.WARNING_MESSAGE);
             txtDniCliente.requestFocus();
             return;
         }
         
-        if(txtTelefonoCliente.getText().length() == 0 || txtTelefonoCliente.getText().length() > 255){
+        if(txtTelefonoCliente.getText().length() == 0 || txtTelefonoCliente.getText().length() > 15){
             JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 15 caracteres, " + " es obligatorio",
                     "Advertencia",JOptionPane.WARNING_MESSAGE);
             txtTelefonoCliente.requestFocus();
             return;
         }
         
-        if(txtEdadCliente.getText().length() == 0 || txtEdadCliente.getText().length() > 255){
+        if(txtEdadCliente.getText().length() == 0 || txtEdadCliente.getText().length() > 3){
             JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 3 caracteres, " + " es obligatorio",
                     "Advertencia",JOptionPane.WARNING_MESSAGE);
             txtEdadCliente.requestFocus();
