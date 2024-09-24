@@ -157,7 +157,7 @@ public class CitaDAO implements CitaInterface<Citas>{
     public boolean existe(String mascota_id) {
         resp = false;
         try{
-            ps=CON.Conectar().prepareStatement("SELECT COUNT(*) FROM citas WHERE mascota_id = ?");
+            ps=CON.Conectar().prepareStatement("SELECT COUNT(*) FROM citas WHERE cliente_id = ?");
             //ps.setString(1,cliente_id);
             ps.setString(1,mascota_id);
             rs = ps.executeQuery(); 
