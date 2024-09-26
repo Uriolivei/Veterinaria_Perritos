@@ -29,7 +29,7 @@ public class ClienteDAO implements ClienteInterface<Clientes>{
             rs=ps.executeQuery();
             while(rs.next()){
                 registros.add(new Clientes(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), 
-                rs.getString(5),rs.getBoolean(6)));
+                rs.getString(5),rs.getString(6),rs.getBoolean(7)));
             }
             ps.close();
             rs.close();
@@ -47,11 +47,13 @@ public class ClienteDAO implements ClienteInterface<Clientes>{
     public boolean insertar(Clientes obj) {
         resp=false;
            try {
-            ps=CON.Conectar().prepareStatement("INSERT INTO clientes(nombre_cliente,DNI,telefono,edad,condicion) VALUES(?,?,?,?,0)");
+            ps=CON.Conectar().prepareStatement("INSERT INTO clientes(nombre_cliente,DNI,telefono,edad,direccion,condicion) "
+                    + "VALUES(?,?,?,?,?,1)");
             ps.setString(1, obj.getNombre_cliente());
             ps.setString(2, obj.getDNI());
             ps.setString(3, obj.getTelefono());
             ps.setString(4, obj.getEdad());
+            ps.setString(5, obj.getDireccion());
             if(ps.executeUpdate()>0){
                 resp=true;
             }
@@ -69,12 +71,14 @@ public class ClienteDAO implements ClienteInterface<Clientes>{
     public boolean actualizar(Clientes obj) {
         resp=false;
         try {
-           ps=CON.Conectar().prepareStatement("UPDATE clientes SET nombre_cliente=?, DNI=?, telefono=?, edad=? WHERE idcliente=?");
+           ps=CON.Conectar().prepareStatement("UPDATE clientes SET nombre_cliente=?, DNI=?, telefono=?, edad=? direccion=? "
+                   + "WHERE idcliente=?");
            ps.setString(1, obj.getNombre_cliente());
            ps.setString(2, obj.getDNI());
            ps.setString(3, obj.getTelefono());
            ps.setString(4, obj.getEdad());
-           ps.setInt(5,obj.getIdcliente());
+           ps.setString(5, obj.getDireccion());
+           ps.setInt(6,obj.getIdcliente());
            if(ps.executeUpdate()>0){
                resp = true;
            }

@@ -187,7 +187,7 @@ public class CitaDAO implements CitaInterface<Citas>{
     List<Clientes> registros = new ArrayList<>();
     try {
         // Consulta SQL para obtener id y nombre de los clientes
-        ps = CON.Conectar().prepareStatement("SELECT idcliente, nombre_cliente, DNI, telefono, edad, condicion FROM clientes ORDER BY nombre_cliente ASC");
+        ps = CON.Conectar().prepareStatement("SELECT idcliente, nombre_cliente, DNI, telefono, edad, direccion condicion FROM clientes ORDER BY nombre_cliente ASC");
         rs = ps.executeQuery();
         while (rs.next()) {
             registros.add(new Clientes(
@@ -196,7 +196,8 @@ public class CitaDAO implements CitaInterface<Citas>{
                 rs.getString(3),
                 rs.getString(4),
                 rs.getString(5),
-                rs.getBoolean(6)
+                rs.getString(6),
+                rs.getBoolean(7)
             ));
         }
         ps.close();

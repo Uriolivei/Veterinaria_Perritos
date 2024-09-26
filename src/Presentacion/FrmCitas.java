@@ -295,6 +295,15 @@ public class FrmCitas extends javax.swing.JInternalFrame {
 
         txtDescripcion.setColumns(20);
         txtDescripcion.setRows(5);
+        txtDescripcion.setText("Descripción del motivo");
+        txtDescripcion.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDescripcionFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDescripcionFocusLost(evt);
+            }
+        });
         jScrollPane2.setViewportView(txtDescripcion);
 
         jLabel7.setText("Fecha de la Cita");
@@ -540,6 +549,20 @@ public class FrmCitas extends javax.swing.JInternalFrame {
             this.mensajeError("Selecionar 1 registro para editar");
         }
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void txtDescripcionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDescripcionFocusGained
+        // TODO add your handling code here:
+        if(txtDescripcion.getText().equals("Descripción del motivo")){
+            txtDescripcion.setText("");
+        }
+    }//GEN-LAST:event_txtDescripcionFocusGained
+
+    private void txtDescripcionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDescripcionFocusLost
+        // TODO add your handling code here:
+        if(txtDescripcion.getText().isEmpty()){
+            txtDescripcion.setText("Descripción del motivo");
+        }
+    }//GEN-LAST:event_txtDescripcionFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

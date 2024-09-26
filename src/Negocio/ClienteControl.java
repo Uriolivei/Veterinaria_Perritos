@@ -22,11 +22,11 @@ public class ClienteControl {
         List<Clientes> lista = new ArrayList();
         lista.addAll(datos.listar(texto));
         
-        String[] titulos={"IdCliente","Nombre Cliente","DNI","Teléfono","Edad","Condición"};
+        String[] titulos={"IdCliente","Nombre Cliente","DNI","Teléfono","Edad","Dirección", "Condición"};
         this.modeloTabla=new DefaultTableModel(null,titulos);
         
         String estado;
-        String[] registro = new String[6];
+        String[] registro = new String[7];
         
         this.registrosMostrados=0;
         
@@ -41,14 +41,15 @@ public class ClienteControl {
             registro[2]=item.getDNI();
             registro[3]=item.getTelefono();
             registro[4]=item.getEdad();
-            registro[5]=estado;
+            registro[5]=item.getEdad();
+            registro[6]=estado;
             this.modeloTabla.addRow(registro);
             this.registrosMostrados++;
         }
         return this.modeloTabla;
     }
     
-    public String insertar(String nombre, String DNI, String telefono, String edad){
+    public String insertar(String nombre, String DNI, String telefono, String edad, String direccion){
         if(datos.existe(nombre)){
             return "El nombre del cliente se encuentra en nuestra BD";
         }else{
@@ -56,6 +57,7 @@ public class ClienteControl {
             obj.setDNI(DNI);
             obj.setTelefono(telefono);
             obj.setEdad(edad);
+            obj.setDireccion(direccion);
             if(datos.insertar(obj)){
                 return "OK";
             }else{
@@ -64,13 +66,14 @@ public class ClienteControl {
         }
     }
     
-    public String actualizar(int id,String nombre, String nombreAnt,String DNI,String telefono, String edad){
+    public String actualizar(int id,String nombre, String nombreAnt,String DNI,String telefono, String edad, String direccion){
         if(nombre.equals(nombreAnt)){
             obj.setIdcliente(id);
             obj.setNombre_cliente(nombre);
             obj.setDNI(DNI);
             obj.setTelefono(telefono);
             obj.setEdad(edad);
+            obj.setDireccion(direccion);
             if(datos.actualizar(obj)){
                 return "OK";
             }else{

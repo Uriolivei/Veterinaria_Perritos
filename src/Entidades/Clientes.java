@@ -6,18 +6,20 @@ public class Clientes {
     private String DNI;
     private String telefono;
     private String edad;
+    private String direccion;
     private boolean condicion;
 
     public Clientes() {
         
     }
 
-    public Clientes(int idcliente, String nombre_cliente, String DNI, String telefono, String edad, boolean condicion) {
+    public Clientes(int idcliente, String nombre_cliente, String DNI, String telefono, String edad, String direccion, boolean condicion) {
         this.idcliente = idcliente;
         this.nombre_cliente = nombre_cliente;
         this.DNI = DNI;
         this.telefono = telefono;
         this.edad = edad;
+        this.direccion = direccion;
         this.condicion = condicion;
     }
 
@@ -61,6 +63,14 @@ public class Clientes {
         this.edad = edad;
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     public boolean isCondicion() {
         return condicion;
     }
@@ -71,8 +81,6 @@ public class Clientes {
 
     @Override
     public String toString() {
-        return "Clientes{" + "idcliente=" + idcliente + ", nombre_cliente=" + nombre_cliente + ", DNI=" + DNI + ", telefono=" + telefono + ", edad=" + edad + ", condicion=" + condicion + '}';
+        return "Clientes{" + "idcliente=" + idcliente + ", nombre_cliente=" + nombre_cliente + ", DNI=" + DNI + ", telefono=" + telefono + ", edad=" + edad + ", direccion=" + direccion + ", condicion=" + condicion + '}';
     }
-    
-    
 }
