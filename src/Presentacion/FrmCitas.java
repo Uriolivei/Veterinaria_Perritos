@@ -5,6 +5,7 @@
 package Presentacion;
 
 import Negocio.CitaControl;
+import java.awt.Color;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -466,8 +467,8 @@ public class FrmCitas extends javax.swing.JInternalFrame {
             }
         }else{
             // Condicional para guardar
-            resp = this.CONTROL.insertar(clienteSeleccionado, pacienteSeleccionado, trabajadorSeleccionado, motivoSeleccionado,
-                    txtDescripcion.getText(), fecha_cita);
+            resp = this.CONTROL.insertar(clienteSeleccionado, pacienteSeleccionado, trabajadorSeleccionado, 
+                    motivoSeleccionado,txtDescripcion.getText(), fecha_cita);
             if(resp.equals("OK")){
                 this.mensajeOk("Registrado correctamente");
                 this.listar("");
@@ -543,12 +544,25 @@ public class FrmCitas extends javax.swing.JInternalFrame {
             String mascota_id = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 2));
             String trabajador_id = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 3));
             String motivo = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 4));
+            String descripcion = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 5));
+            String fecha_cita = String.valueOf(Listado.getValueAt(Listado.getSelectedRow(), 6));
             
             txtId.setText(id);
             cboCliente.setSelectedItem(cliente_id);
             cboPaciente.setSelectedItem(mascota_id);
             cboTrabajador.setSelectedItem(trabajador_id);
             cboMotivo.setSelectedItem(motivo);
+            txtDescripcion.setText(descripcion);
+            
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); // Cambia el formato si es necesario
+
+            try {
+                Date fecha = formato.parse(fecha_cita); // Convierte String a Date
+                txtFecha.setDate(fecha); // Establece la fecha en el JDateChooser
+            } catch (ParseException e) {
+                // Manejo de excepción
+                
+            }
            
             Tabgeneral.setEnabledAt(0, false);
             Tabgeneral.setEnabledAt(1, true);
