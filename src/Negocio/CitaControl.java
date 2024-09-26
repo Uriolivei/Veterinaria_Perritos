@@ -68,11 +68,11 @@ public class CitaControl {
         List<Citas> lista = new ArrayList();
         lista.addAll(datos.listar(texto));
         
-        String[] titulos={"IdCita","Nombre Cliente","Nombre Trabajador","Nombre Paciente","Motivo","Condición"};
+        String[] titulos={"IdCita","Nombre Cliente","Nombre Paciente","Nombre Trabajador","Motivo","Descripción","Fecha de la Cita","Condición"};
         this.modeloTabla=new DefaultTableModel(null,titulos);
         
         String estado;
-        String[] registro = new String[6];
+        String[] registro = new String[8];
         
         this.registrosMostrados=0;
         
@@ -87,7 +87,10 @@ public class CitaControl {
             registro[2]=item.getMascota_id();
             registro[3]=item.getTrabajador_id();
             registro[4]=item.getMotivo();
-            registro[5]=estado;
+            registro[5]=item.getDescripcion();
+            java.sql.Date fechaCita = item.getFecha_cita();
+            registro[6] = (fechaCita != null) ? fechaCita.toString() : "";
+            registro[7]=estado;
             this.modeloTabla.addRow(registro);
             this.registrosMostrados++;
         }
@@ -97,7 +100,7 @@ public class CitaControl {
  
     
     
-    public String insertar(String cliente_id, String mascota_id, String trabajador_id, String motivo) {
+    public String insertar(String cliente_id, String mascota_id, String trabajador_id, String motivo, String descripcion, String fecha_cita) {
     if(datos.existe(mascota_id)) {
         return "El nombre de la mascota ya existe en nuestra BD.";
     } else {
@@ -105,7 +108,13 @@ public class CitaControl {
         obj.setMascota_id(mascota_id);
         obj.setTrabajador_id(trabajador_id);
         obj.setMotivo(motivo);
-
+        obj.setDescripcion(descripcion);
+        try {
+            java.sql.Date fechaSQL = java.sql.Date.valueOf(fecha_cita);
+            obj.setFecha_cita(fechaSQL);
+        } catch (IllegalArgumentException e) {
+            return "Formato de fecha inválido";
+        }
         if (datos.insertar(obj)) {
             return "OK";
         } else {
@@ -116,21 +125,26 @@ public class CitaControl {
 
 
     
-    public String actualizar(int id, String cliente_id, String nombreAnt, String mascota_id, String trabajador_id, String motivo) {
+    public String actualizar(int id, String cliente_id, String nombreAnt, String mascota_id, String trabajador_id, String motivo, String descripcion, String fecha_cita) {
     obj.setIdcita(id);
     obj.setCliente_id(cliente_id);
     obj.setMascota_id(mascota_id);
     obj.setTrabajador_id(trabajador_id);
     obj.setMotivo(motivo);
-
-    // Verificar si el cliente ha cambiado
+    obj.setDescripcion(descripcion);
+    try {
+            java.sql.Date fechaSQL = java.sql.Date.valueOf(fecha_cita); // formato de fecha: "yyyy-mm-dd"
+            obj.setFecha_cita(fechaSQL);
+        } catch (IllegalArgumentException e) {
+            return "Formato de fecha inválido";
+        }
+        
     if (!cliente_id.equals(nombreAnt)) {
         if (datos.existe(mascota_id)) { 
             return "El cliente ya existe";
         }
     }
 
-    // Intentar actualizar
     if (datos.actualizar(obj)) {
         return "OK";
     } else {

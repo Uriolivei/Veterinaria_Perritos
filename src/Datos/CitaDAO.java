@@ -34,8 +34,9 @@ public class CitaDAO implements CitaInterface<Citas>{
             ps.setString(1, "%" + texto + "%");
             rs=ps.executeQuery();
             while(rs.next()){
+                java.sql.Date fechaCita = rs.getDate(7); 
                 registros.add(new Citas(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), 
-                rs.getString(5),rs.getBoolean(6)));
+                rs.getString(5),rs.getString(6),fechaCita,rs.getBoolean(8)));
             }
             ps.close();
             rs.close();
@@ -53,11 +54,14 @@ public class CitaDAO implements CitaInterface<Citas>{
     public boolean insertar(Citas obj) {
         resp=false;
            try {
-            ps=CON.Conectar().prepareStatement("INSERT INTO citas(cliente_id,mascota_id,trabajador_id,motivo,condicion) VALUES(?,?,?,?,1)");
+            ps=CON.Conectar().prepareStatement("INSERT INTO citas(cliente_id,mascota_id,trabajador_id,motivo,descripcion,fecha_cita,condicion) VALUES(?,?,?,?,?,?,1)");
             ps.setString(1, obj.getCliente_id());
             ps.setString(2, obj.getMascota_id());
             ps.setString(3, obj.getTrabajador_id());
             ps.setString(4, obj.getMotivo());
+            ps.setString(5, obj.getDescripcion());
+            java.sql.Date fechaCita = new java.sql.Date(obj.getFecha_cita().getTime());
+            ps.setDate(6, fechaCita);
             if(ps.executeUpdate()>0){
                 resp=true;
             }
@@ -75,12 +79,15 @@ public class CitaDAO implements CitaInterface<Citas>{
     public boolean actualizar(Citas obj) {
         resp=false;
         try {
-           ps=CON.Conectar().prepareStatement("UPDATE citas SET cliente_id=?, mascota_id=?, trabajador_id=?, motivo=? WHERE idcita=?");
+           ps=CON.Conectar().prepareStatement("UPDATE citas SET cliente_id=?, mascota_id=?, trabajador_id=?, motivo=?, fecha_cita=? descripcion=? WHERE idcita=?");
            ps.setString(1, obj.getCliente_id());
            ps.setString(2, obj.getMascota_id());
            ps.setString(3, obj.getTrabajador_id());
            ps.setString(4, obj.getMotivo());
-           ps.setInt(5,obj.getIdcita());
+           ps.setString(5, obj.getDescripcion());
+           java.sql.Date fechaCita = new java.sql.Date(obj.getFecha_cita().getTime());
+           ps.setDate(6, fechaCita);
+           ps.setInt(7,obj.getIdcita());
            if(ps.executeUpdate()>0){
                resp = true;
            }
