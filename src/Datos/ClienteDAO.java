@@ -71,7 +71,7 @@ public class ClienteDAO implements ClienteInterface<Clientes>{
     public boolean actualizar(Clientes obj) {
         resp=false;
         try {
-           ps=CON.Conectar().prepareStatement("UPDATE clientes SET nombre_cliente=?, DNI=?, telefono=?, edad=? direccion=? "
+           ps=CON.Conectar().prepareStatement("UPDATE clientes SET nombre_cliente=?, DNI=?, telefono=?, edad=?, direccion=? "
                    + "WHERE idcliente=?");
            ps.setString(1, obj.getNombre_cliente());
            ps.setString(2, obj.getDNI());

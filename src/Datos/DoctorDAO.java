@@ -47,7 +47,7 @@ public class DoctorDAO implements DoctorInterface<Doctores> {
     public boolean insertar(Doctores obj) {
         resp=false;
            try {
-            ps=CON.Conectar().prepareStatement("INSERT INTO trabajadores(nombre,DNI,telefono,correo,condicion) VALUES(?,?,?,?,0)");
+            ps=CON.Conectar().prepareStatement("INSERT INTO trabajadores(nombre,DNI,telefono,correo,condicion) VALUES(?,?,?,?,1)");
             ps.setString(1, obj.getNombre());
             ps.setString(2, obj.getDNI());
             ps.setString(3, obj.getTelefono());

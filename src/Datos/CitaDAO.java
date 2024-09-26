@@ -54,7 +54,8 @@ public class CitaDAO implements CitaInterface<Citas>{
     public boolean insertar(Citas obj) {
         resp=false;
            try {
-            ps=CON.Conectar().prepareStatement("INSERT INTO citas(cliente_id,mascota_id,trabajador_id,motivo,descripcion,fecha_cita,condicion) VALUES(?,?,?,?,?,?,1)");
+            ps=CON.Conectar().prepareStatement("INSERT INTO citas(cliente_id,mascota_id,trabajador_id,motivo,descripcion,fecha_cita,condicion) "
+                    + "VALUES(?,?,?,?,?,?,1)");
             ps.setString(1, obj.getCliente_id());
             ps.setString(2, obj.getMascota_id());
             ps.setString(3, obj.getTrabajador_id());
@@ -79,7 +80,8 @@ public class CitaDAO implements CitaInterface<Citas>{
     public boolean actualizar(Citas obj) {
         resp=false;
         try {
-           ps=CON.Conectar().prepareStatement("UPDATE citas SET cliente_id=?, mascota_id=?, trabajador_id=?, motivo=?, fecha_cita=? descripcion=? WHERE idcita=?");
+           ps=CON.Conectar().prepareStatement("UPDATE citas SET cliente_id=?, mascota_id=?, trabajador_id=?, motivo=?, descripcion=?, "
+                   + "fecha_cita=? WHERE idcita=?");
            ps.setString(1, obj.getCliente_id());
            ps.setString(2, obj.getMascota_id());
            ps.setString(3, obj.getTrabajador_id());
@@ -164,7 +166,7 @@ public class CitaDAO implements CitaInterface<Citas>{
     public boolean existe(String mascota_id) {
         resp = false;
         try{
-            ps=CON.Conectar().prepareStatement("SELECT COUNT(*) FROM citas WHERE cliente_id = ?");
+            ps=CON.Conectar().prepareStatement("SELECT COUNT(*) FROM citas WHERE mascota_id = ?");
             //ps.setString(1,cliente_id);
             ps.setString(1,mascota_id);
             rs = ps.executeQuery(); 
@@ -187,7 +189,8 @@ public class CitaDAO implements CitaInterface<Citas>{
     List<Clientes> registros = new ArrayList<>();
     try {
         // Consulta SQL para obtener id y nombre de los clientes
-        ps = CON.Conectar().prepareStatement("SELECT idcliente, nombre_cliente, DNI, telefono, edad, direccion condicion FROM clientes ORDER BY nombre_cliente ASC");
+        ps = CON.Conectar().prepareStatement("SELECT idcliente, nombre_cliente, DNI, telefono, edad, direccion, condicion "
+                + "FROM clientes ORDER BY nombre_cliente ASC");
         rs = ps.executeQuery();
         while (rs.next()) {
             registros.add(new Clientes(
@@ -203,7 +206,7 @@ public class CitaDAO implements CitaInterface<Citas>{
         ps.close();
         rs.close();
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "No se pueden cargar los clientes: " + e.getMessage());
+        JOptionPane.showMessageDialog(null, "No se pueden cargar las citas: " + e.getMessage());
         } finally {
         ps = null;
         rs = null;

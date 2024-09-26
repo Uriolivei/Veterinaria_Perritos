@@ -41,7 +41,7 @@ public class ClienteControl {
             registro[2]=item.getDNI();
             registro[3]=item.getTelefono();
             registro[4]=item.getEdad();
-            registro[5]=item.getEdad();
+            registro[5]=item.getDireccion();
             registro[6]=estado;
             this.modeloTabla.addRow(registro);
             this.registrosMostrados++;

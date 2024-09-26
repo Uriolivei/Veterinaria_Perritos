@@ -5,6 +5,7 @@
 package Presentacion;
 
 import Negocio.CitaControl;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
@@ -128,7 +129,7 @@ public class FrmCitas extends javax.swing.JInternalFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
 
-        jLabel1.setText("Nombre del Paciente: ");
+        jLabel1.setText("Nombre del Cliente: ");
 
         txtBuscar.setForeground(new java.awt.Color(153, 153, 153));
         txtBuscar.setText("Buscar...");
@@ -202,7 +203,7 @@ public class FrmCitas extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
                         .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -430,21 +431,30 @@ public class FrmCitas extends javax.swing.JInternalFrame {
         String trabajadorSeleccionado = cboTrabajador.getSelectedItem() != null ? cboTrabajador.getSelectedItem().toString() : "";
         String motivoSeleccionado = cboMotivo.getSelectedItem() != null ? cboMotivo.getSelectedItem().toString() : "";
 
-        String descripcion = txtDescripcion.getText(); 
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-        String fecha_cita = formato.format(txtFecha.getDate());
-
+        String descripcion = txtDescripcion.getText();
         if(txtDescripcion.getText().length() == 0 || txtDescripcion.getText().length() > 300){
             JOptionPane.showMessageDialog(this, "Debes ingresar una descripción y no debe ser mayor a 300 caracteres, es obligatorio",
                     "Advertencia",JOptionPane.WARNING_MESSAGE);
             txtDescripcion.requestFocus();
             return;
         }
+        
+        if (txtFecha.getDate() == null) {
+        JOptionPane.showMessageDialog(this, "Debes seleccionar una fecha válida", "Advertencia", 
+                JOptionPane.WARNING_MESSAGE);
+        txtFecha.requestFocus();
+        return;
+        }
+
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        String fecha_cita = formato.format(txtFecha.getDate()); // Convierte la fecha directamente a String
+
 
         if(this.accion.equals("editar")){
             // Condicional para editar
-            resp = this.CONTROL.actualizar(Integer.parseInt(txtId.getText()), clienteSeleccionado, nombreAnt, trabajadorSeleccionado,
-                    pacienteSeleccionado, motivoSeleccionado, txtDescripcion.getText(), fecha_cita);
+            resp = this.CONTROL.actualizar(Integer.parseInt(txtId.getText()), clienteSeleccionado, nombreAnt, 
+                    pacienteSeleccionado,trabajadorSeleccionado, motivoSeleccionado, 
+                    txtDescripcion.getText(), fecha_cita);
             if(resp.equals("OK")){
                 this.mensajeOk("Actualizado correctamente");
                 this.listar("");

@@ -68,7 +68,7 @@ public class CitaControl {
         List<Citas> lista = new ArrayList();
         lista.addAll(datos.listar(texto));
         
-        String[] titulos={"IdCita","Nombre Cliente","Nombre Paciente","Nombre Trabajador","Motivo","Descripción","Fecha de la Cita","Condición"};
+        String[] titulos={"IdCita","Cliente","Paciente","Trabajador","Motivo","Descripción","Fecha de la Cita","Condición"};
         this.modeloTabla=new DefaultTableModel(null,titulos);
         
         String estado;

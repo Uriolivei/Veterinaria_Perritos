@@ -49,7 +49,8 @@ public class PacienteDAO implements PacienteInterface<Mascotas> {
     public boolean insertar(Mascotas obj) {
         resp=false;
            try {
-            ps=CON.Conectar().prepareStatement("INSERT INTO mascotas(nombre_mascota,raza,color,peso,edad,fecha_nacimiento,condicion) VALUES(?,?,?,?,?,?,0)");
+            ps=CON.Conectar().prepareStatement("INSERT INTO mascotas(nombre_mascota,raza,color,peso,edad,fecha_nacimiento,condicion) "
+                    + "VALUES(?,?,?,?,?,?,1)");
             ps.setString(1, obj.getNombre_mascota());
             ps.setString(2, obj.getRaza());
             ps.setString(3, obj.getColor());
@@ -74,7 +75,8 @@ public class PacienteDAO implements PacienteInterface<Mascotas> {
     public boolean actualizar(Mascotas obj) {
         resp=false;
         try {
-           ps=CON.Conectar().prepareStatement("UPDATE mascotas SET nombre_mascota=?, raza=?,color=?, peso=?, edad=?, fecha_nacimiento=? WHERE idmascota=?");
+           ps=CON.Conectar().prepareStatement("UPDATE mascotas SET nombre_mascota=?, raza=?,color=?, peso=?, edad=?, fecha_nacimiento=? "
+                   + "WHERE idmascota=?");
            ps.setString(1, obj.getNombre_mascota());
            ps.setString(2, obj.getRaza());
            ps.setString(3, obj.getColor());
